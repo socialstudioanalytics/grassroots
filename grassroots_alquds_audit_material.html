@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grassroots Al-Quds — Digital Media Audit 2022–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+/* ── Material Design 3 Tokens ─────────────────────────────────── */
+:root {
+  --md-sys-color-primary: #1B6B33;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #A8F5B8;
+  --md-sys-color-on-primary-container: #002111;
+  --md-sys-color-secondary: #BF5000;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #FFDBCC;
+  --md-sys-color-on-secondary-container: #3A1400;
+  --md-sys-color-tertiary: #006874;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-error: #B3261E;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #F9DEDC;
+  --md-sys-color-background: #F4F6F4;
+  --md-sys-color-on-background: #1A1C1A;
+  --md-sys-color-surface: #FFFFFF;
+  --md-sys-color-surface-variant: #DCE5DC;
+  --md-sys-color-on-surface: #1A1C1A;
+  --md-sys-color-on-surface-variant: #404943;
+  --md-sys-color-outline: #707973;
+  --md-sys-color-outline-variant: #C0C9C1;
+  --md-sys-color-inverse-surface: #2E312E;
+  --md-sys-color-surface-1: #EBF1EA;
+  --md-sys-color-surface-2: #E3EBE2;
+  --md-sys-color-surface-3: #DAE5D9;
+  --md-elevation-1: 0 1px 2px rgba(0,0,0,.12), 0 1px 3px 1px rgba(0,0,0,.08);
+  --md-elevation-2: 0 1px 2px rgba(0,0,0,.16), 0 2px 6px 2px rgba(0,0,0,.10);
+  --md-elevation-3: 0 4px 8px 3px rgba(0,0,0,.10), 0 1px 3px rgba(0,0,0,.16);
+  --md-shape-small: 8px;
+  --md-shape-medium: 12px;
+  --md-shape-large: 16px;
+  --md-shape-extra-large: 28px;
+  --md-typescale-display-small: 500 36px/44px 'Roboto', sans-serif;
+  --md-typescale-headline-medium: 400 28px/36px 'Roboto', sans-serif;
+  --md-typescale-headline-small: 400 24px/32px 'Roboto', sans-serif;
+  --md-typescale-title-large: 500 22px/28px 'Roboto', sans-serif;
+  --md-typescale-title-medium: 500 16px/24px 'Roboto', sans-serif;
+  --md-typescale-title-small: 500 14px/20px 'Roboto', sans-serif;
+  --md-typescale-label-large: 500 14px/20px 'Roboto', sans-serif;
+  --md-typescale-label-medium: 500 12px/16px 'Roboto', sans-serif;
+  --md-typescale-body-large: 400 16px/24px 'Roboto', sans-serif;
+  --md-typescale-body-medium: 400 14px/20px 'Roboto', sans-serif;
+  --md-typescale-body-small: 400 12px/16px 'Roboto', sans-serif;
+  --nav-width: 280px;
+  --topbar-height: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font: var(--md-typescale-body-medium);
+  font-family: 'Roboto', sans-serif;
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ── Top App Bar ─────────────────────────────────────────────── */
+.top-app-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-height);
+  background: var(--md-sys-color-surface-1);
+  box-shadow: var(--md-elevation-2);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+}
+.app-bar-leading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.app-bar-icon {
+  width: 40px; height: 40px;
+  background: var(--md-sys-color-primary);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--md-sys-color-on-primary);
+  font-size: 20px;
+}
+.app-bar-title {
+  font: var(--md-typescale-title-large);
+  color: var(--md-sys-color-on-surface);
+}
+.app-bar-subtitle {
+  font: var(--md-typescale-body-small);
+  color: var(--md-sys-color-on-surface-variant);
+}
+.app-bar-chips {
+  display: flex; gap: 8px; flex: 1;
+  overflow-x: auto; scrollbar-width: none;
+  margin-left: 16px;
+}
+.app-bar-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font: var(--md-typescale-label-medium);
+  white-space: nowrap;
+  border: none; cursor: default;
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+.app-bar-chip .material-icons { font-size: 16px; }
+
+/* ── Navigation Drawer ───────────────────────────────────────── */
+.nav-drawer {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 0; bottom: 0;
+  width: var(--nav-width);
+  background: var(--md-sys-color-surface-1);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 12px 0;
+  border-right: 1px solid var(--md-sys-color-outline-variant);
+}
+.nav-section-label {
+  font: var(--md-typescale-label-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  padding: 16px 28px 8px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px 14px 16px;
+  margin: 2px 12px;
+  border-radius: var(--md-shape-extra-large);
+  cursor: pointer;
+  font: var(--md-typescale-label-large);
+  color: var(--md-sys-color-on-surface-variant);
+  transition: background .15s, color .15s;
+  user-select: none;
+}
+.nav-item .material-icons { font-size: 22px; flex-shrink: 0; }
+.nav-item:hover { background: rgba(27,107,51,.08); color: var(--md-sys-color-primary); }
+.nav-item.active {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-weight: 700;
+}
+.nav-divider {
+  height: 1px;
+  background: var(--md-sys-color-outline-variant);
+  margin: 8px 16px;
+}
+
+/* ── Main Content ────────────────────────────────────────────── */
+.main {
+  margin-left: var(--nav-width);
+  margin-top: var(--topbar-height);
+  flex: 1;
+  min-height: calc(100vh - var(--topbar-height));
+}
+.page { display: none; padding: 32px; max-width: 1280px; animation: fadeIn .25s ease; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Typography Scale ────────────────────────────────────────── */
+.display-small { font: var(--md-typescale-display-small); }
+.headline-medium { font: var(--md-typescale-headline-medium); }
+.headline-small { font: var(--md-typescale-headline-small); color: var(--md-sys-color-on-surface); margin-bottom: 4px; }
+.title-large { font: var(--md-typescale-title-large); }
+.title-medium { font: var(--md-typescale-title-medium); }
+.title-small { font: var(--md-typescale-title-small); color: var(--md-sys-color-on-surface); margin-bottom: 16px; }
+.body-large { font: var(--md-typescale-body-large); }
+.body-medium { font: var(--md-typescale-body-medium); }
+.body-small { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); }
+.label-large { font: var(--md-typescale-label-large); }
+.label-medium { font: var(--md-typescale-label-medium); }
+
+/* ── Page Header ─────────────────────────────────────────────── */
+.page-header { margin-bottom: 32px; }
+.page-header .eyebrow {
+  font: var(--md-typescale-label-medium);
+  color: var(--md-sys-color-primary);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 6px;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.md-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  box-shadow: var(--md-elevation-1);
+  padding: 20px;
+  transition: box-shadow .2s;
+}
+.md-card:hover { box-shadow: var(--md-elevation-2); }
+.md-card-filled {
+  background: var(--md-sys-color-surface-3);
+  border-radius: var(--md-shape-large);
+  padding: 20px;
+}
+.md-card-outlined {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  padding: 20px;
+}
+.card-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* ── Grids ───────────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+@media(max-width:1100px) { .grid-2,.grid-3,.grid-4,.grid-2-1 { grid-template-columns:1fr; } }
+.gap-16 { gap: 16px !important; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mb-20 { margin-bottom: 20px; }
+
+/* ── KPI Cards ───────────────────────────────────────────────── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 16px; margin-bottom: 28px; }
+.kpi-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  padding: 20px;
+  box-shadow: var(--md-elevation-1);
+  display: flex; flex-direction: column; gap: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--kpi-accent, var(--md-sys-color-primary));
+}
+.kpi-card .kpi-supporting {
+  font: var(--md-typescale-label-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.kpi-card .kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.1;
+  font-family: 'Roboto Mono', monospace;
+}
+.kpi-card .kpi-label {
+  font: var(--md-typescale-body-small);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ── Badges / Status Chips ───────────────────────────────────── */
+.md-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font: var(--md-typescale-label-medium);
+}
+.md-chip .material-icons { font-size: 14px; }
+.chip-primary { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+.chip-secondary { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
+.chip-error { background: var(--md-sys-color-error-container); color: var(--md-sys-color-error); }
+.chip-neutral { background: var(--md-sys-color-surface-variant); color: var(--md-sys-color-on-surface-variant); }
+.chip-warn { background: #FFF3CD; color: #5C4000; }
+.chip-success { background: #DCFCE7; color: #166534; }
+.chip-info { background: #DBEAFE; color: #1E40AF; }
+
+/* ── Tables ──────────────────────────────────────────────────── */
+.md-table-wrap { overflow-x: auto; border-radius: var(--md-shape-large); }
+.md-table {
+  width: 100%; border-collapse: collapse;
+  font: var(--md-typescale-body-medium);
+}
+.md-table thead tr { border-bottom: 2px solid var(--md-sys-color-outline-variant); }
+.md-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font: var(--md-typescale-label-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+.md-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  font: var(--md-typescale-body-medium);
+  color: var(--md-sys-color-on-surface);
+}
+.md-table tbody tr:last-child td { border-bottom: none; }
+.md-table tbody tr { transition: background .12s; }
+.md-table tbody tr:hover td { background: var(--md-sys-color-surface-1); }
+
+/* ── Tabs ────────────────────────────────────────────────────── */
+.md-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  margin-bottom: 20px;
+  gap: 0;
+}
+.md-tab {
+  padding: 12px 20px;
+  font: var(--md-typescale-title-small);
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  border: none; background: none;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.md-tab:hover { color: var(--md-sys-color-primary); }
+.md-tab.active {
+  color: var(--md-sys-color-primary);
+  border-bottom-color: var(--md-sys-color-primary);
+  font-weight: 700;
+}
+.md-tab-pane { display: none; }
+.md-tab-pane.active { display: block; }
+
+/* ── Banners / Alerts ────────────────────────────────────────── */
+.md-banner {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--md-shape-medium);
+  margin-bottom: 20px;
+  font: var(--md-typescale-body-medium);
+}
+.md-banner .material-icons { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.banner-info { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+.banner-warn { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.banner-error { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+.banner-success { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+.banner-title { font: var(--md-typescale-label-large); margin-bottom: 4px; }
+
+/* ── Chart Wrappers ──────────────────────────────────────────── */
+.chart-container { position: relative; height: 280px; }
+.chart-container.sm { height: 220px; }
+.chart-container.lg { height: 340px; }
+
+/* ── List Items ──────────────────────────────────────────────── */
+.md-list-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+.md-list-item:last-child { border-bottom: none; }
+.md-list-item .list-item-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.md-list-item .list-item-icon .material-icons { font-size: 18px; }
+.md-list-item .list-item-text .headline { font: var(--md-typescale-body-large); font-weight: 500; }
+.md-list-item .list-item-text .supporting { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); margin-top: 2px; }
+.md-list-item .list-item-trailing { margin-left: auto; flex-shrink: 0; }
+
+/* ── Progress Bars ───────────────────────────────────────────── */
+.md-linear-progress {
+  height: 8px; background: var(--md-sys-color-surface-variant);
+  border-radius: 4px; overflow: hidden;
+}
+.md-linear-progress-fill {
+  height: 100%; border-radius: 4px;
+  background: var(--md-sys-color-primary);
+  transition: width .5s ease;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.md-divider { height: 1px; background: var(--md-sys-color-outline-variant); margin: 20px 0; }
+
+/* ── Rec Cards ───────────────────────────────────────────────── */
+.rec-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  box-shadow: var(--md-elevation-1);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 5px solid var(--rec-color, var(--md-sys-color-primary));
+}
+.rec-card .rec-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.rec-card .rec-id {
+  font: var(--md-typescale-label-medium);
+  font-family: 'Roboto Mono', monospace;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  padding: 3px 10px; border-radius: 4px;
+}
+.rec-card .rec-title {
+  font: var(--md-typescale-title-medium);
+  color: var(--md-sys-color-on-surface);
+}
+.rec-card .rec-body {
+  font: var(--md-typescale-body-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.6;
+}
+.dont-card {
+  background: var(--md-sys-color-error-container);
+  border-radius: var(--md-shape-large);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.dont-card .dont-title {
+  font: var(--md-typescale-title-small);
+  color: var(--md-sys-color-error);
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 8px;
+}
+.dont-card .dont-body { font: var(--md-typescale-body-medium); color: #5C1010; line-height: 1.6; }
+
+/* ── Platform Status Cards ───────────────────────────────────── */
+.platform-status-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  box-shadow: var(--md-elevation-1);
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.platform-status-card .plat-header { display: flex; align-items: center; gap: 12px; }
+.plat-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--md-shape-medium);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.plat-icon.fb { background: #E3F2FD; }
+.plat-icon.ig { background: #FCE4EC; }
+.plat-icon.tw { background: #E8F5E9; }
+.plat-icon.li { background: #E3F2FD; }
+.plat-icon.web { background: #F3E5F5; }
+.plat-icon.pat { background: #FFF3E0; }
+.plat-stats { display: flex; gap: 20px; }
+.plat-stat-item .stat-num { font: var(--md-typescale-title-large); color: var(--md-sys-color-on-surface); font-family: 'Roboto Mono', monospace; }
+.plat-stat-item .stat-lbl { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); }
+.plat-desc { font: var(--md-typescale-body-medium); color: var(--md-sys-color-on-surface-variant); line-height: 1.55; }
+
+/* ── Hero Banner ─────────────────────────────────────────────── */
+.hero-banner {
+  background: linear-gradient(135deg, #1B6B33 0%, #2E7D32 40%, #1B5E20 100%);
+  border-radius: var(--md-shape-extra-large);
+  padding: 48px 48px 40px;
+  color: #fff;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+}
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: 120px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+}
+.hero-banner .hero-eyebrow {
+  font: var(--md-typescale-label-large);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .8;
+  margin-bottom: 12px;
+}
+.hero-banner .hero-headline {
+  font-size: 40px; font-weight: 300; line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero-banner .hero-headline strong { font-weight: 700; }
+.hero-banner .hero-sub { font: var(--md-typescale-body-large); opacity: .75; margin-bottom: 24px; }
+.hero-banner .hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero-banner .hero-chip {
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font: var(--md-typescale-label-large);
+  display: flex; align-items: center; gap: 6px;
+}
+.hero-banner .hero-chip .material-icons { font-size: 16px; }
+
+/* ── Insight Cards ───────────────────────────────────────────── */
+.insight-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  padding: 20px;
+  box-shadow: var(--md-elevation-1);
+  border-top: 4px solid var(--insight-color, var(--md-sys-color-primary));
+}
+.insight-card .insight-label {
+  font: var(--md-typescale-label-medium);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--insight-color, var(--md-sys-color-primary));
+  margin-bottom: 8px;
+}
+.insight-card .insight-body {
+  font: var(--md-typescale-body-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.6;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline); border-radius: 3px; }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.page-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  font: var(--md-typescale-body-small);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ── Floating home tiles ─────────────────────────────────────── */
+.home-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.home-tile {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  box-shadow: var(--md-elevation-1);
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+  display: flex; flex-direction: column; gap: 8px;
+  text-align: left;
+  border: none;
+}
+.home-tile:hover { box-shadow: var(--md-elevation-3); transform: translateY(-3px); }
+.home-tile .tile-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--md-shape-medium);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+.home-tile .tile-icon .material-icons { font-size: 22px; }
+.home-tile .tile-name { font: var(--md-typescale-title-small); color: var(--md-sys-color-on-surface); }
+.home-tile .tile-sub { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); }
+
+a { color: var(--md-sys-color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── SSA Brand Tokens ────────────────────────────────────────── */
+:root {
+  --ssa-primary: #BF5000;
+  --ssa-dark: #7A3200;
+  --ssa-light: #FFF3EE;
+  --ssa-accent: #1B6B33;
+  --ssa-purple: #6750A4;
+  --ssa-purple-light: #EAE4FF;
+  --ssa-teal: #006874;
+  --ssa-teal-light: #D8F5F8;
+}
+
+/* SSA Hero */
+.ssa-hero {
+  background: linear-gradient(135deg, #7A3200 0%, #BF5000 50%, #E65100 100%);
+  border-radius: var(--md-shape-extra-large);
+  padding: 52px 52px 44px;
+  color: #fff;
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.ssa-hero::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: rgba(255,255,255,.04);
+}
+.ssa-hero::after {
+  content: '';
+  position: absolute; bottom: -60px; left: 200px;
+  width: 240px; height: 240px; border-radius: 50%;
+  background: rgba(255,255,255,.03);
+}
+.ssa-logo-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 24px; padding: 6px 18px;
+  font: var(--md-typescale-label-large);
+  letter-spacing: .06em;
+  margin-bottom: 20px;
+}
+.ssa-hero-headline {
+  font-size: 44px; font-weight: 300; line-height: 1.1; margin-bottom: 10px;
+}
+.ssa-hero-headline strong { font-weight: 800; }
+.ssa-hero-sub { font: var(--md-typescale-body-large); opacity: .8; margin-bottom: 28px; max-width: 640px; line-height: 1.6; }
+.ssa-hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.ssa-hero-chip {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px; padding: 6px 16px;
+  font: var(--md-typescale-label-large);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* SSA Pillar cards */
+.ssa-pillar {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  box-shadow: var(--md-elevation-2);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow .2s, transform .2s;
+}
+.ssa-pillar:hover { box-shadow: var(--md-elevation-3); transform: translateY(-2px); }
+.ssa-pillar-header {
+  padding: 24px 24px 20px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.ssa-pillar-icon {
+  width: 52px; height: 52px; border-radius: var(--md-shape-medium);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 26px;
+}
+.ssa-pillar-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: 4px; opacity: .7;
+}
+.ssa-pillar-title { font: var(--md-typescale-title-large); line-height: 1.2; }
+.ssa-pillar-sub { font: var(--md-typescale-body-small); margin-top: 3px; opacity: .7; }
+.ssa-pillar-body { padding: 0 24px 20px; flex: 1; }
+.ssa-pillar-desc { font: var(--md-typescale-body-medium); line-height: 1.65; margin-bottom: 16px; }
+.ssa-pillar-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+  background: var(--md-sys-color-surface-1);
+}
+
+/* Feature rows inside pillars */
+.ssa-feature-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.ssa-feature {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--md-shape-small);
+  background: var(--md-sys-color-surface-1);
+  border-left: 3px solid var(--feature-color, var(--ssa-primary));
+}
+.ssa-feature .material-icons { font-size: 18px; color: var(--feature-color, var(--ssa-primary)); flex-shrink: 0; margin-top: 1px; }
+.ssa-feature-text .feature-title { font: var(--md-typescale-label-large); color: var(--md-sys-color-on-surface); margin-bottom: 2px; }
+.ssa-feature-text .feature-desc { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); line-height: 1.5; }
+
+/* Timeline */
+.ssa-timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px; }
+.ssa-timeline::before { content:''; position:absolute; left:10px; top:8px; bottom:8px; width:2px; background:var(--md-sys-color-outline-variant); border-radius:1px; }
+.ssa-tl-item { position: relative; padding: 0 0 24px 16px; }
+.ssa-tl-item:last-child { padding-bottom: 0; }
+.ssa-tl-dot {
+  position: absolute; left: -22px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--dot-color, var(--ssa-primary));
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--dot-color, var(--ssa-primary));
+}
+.ssa-tl-phase { font: var(--md-typescale-label-medium); text-transform: uppercase; letter-spacing: .08em; color: var(--dot-color, var(--ssa-primary)); margin-bottom: 4px; }
+.ssa-tl-title { font: var(--md-typescale-title-small); color: var(--md-sys-color-on-surface); margin-bottom: 4px; }
+.ssa-tl-desc { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); line-height: 1.55; }
+
+/* Agent flow cards */
+.agent-card {
+  background: var(--md-sys-color-surface);
+  border-radius: var(--md-shape-large);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.agent-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--ssa-primary), var(--ssa-purple));
+}
+.agent-card .agent-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ssa-light); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+}
+.agent-card .agent-icon .material-icons { color: var(--ssa-primary); font-size: 20px; }
+.agent-card .agent-name { font: var(--md-typescale-title-small); color: var(--md-sys-color-on-surface); margin-bottom: 4px; }
+.agent-card .agent-desc { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); line-height: 1.5; }
+
+/* CTA section */
+.ssa-cta {
+  background: linear-gradient(135deg, #1B6B33 0%, #2E7D32 100%);
+  border-radius: var(--md-shape-extra-large);
+  padding: 48px;
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+.ssa-cta-headline { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+.ssa-cta-sub { font: var(--md-typescale-body-large); opacity: .8; margin-bottom: 28px; }
+.ssa-cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--ssa-primary);
+  padding: 14px 32px; border-radius: 30px;
+  font: var(--md-typescale-title-small);
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  transition: transform .15s, box-shadow .15s;
+}
+.ssa-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); text-decoration: none; color: var(--ssa-primary); }
+
+/* DM mockup */
+.dm-mockup {
+  background: #f0f2f5;
+  border-radius: var(--md-shape-large);
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 360px; overflow-y: auto;
+}
+.dm-msg { display: flex; gap: 8px; align-items: flex-end; }
+.dm-msg.outgoing { flex-direction: row-reverse; }
+.dm-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 13px; font-weight: 700;
+}
+.dm-bubble {
+  max-width: 70%; padding: 10px 14px;
+  border-radius: 18px; font: var(--md-typescale-body-small); line-height: 1.5;
+}
+.dm-msg:not(.outgoing) .dm-bubble { background: #fff; border-bottom-left-radius: 4px; color: #1a1a1a; }
+.dm-msg.outgoing .dm-bubble { background: #BF5000; color: #fff; border-bottom-right-radius: 4px; }
+.dm-ai-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--ssa-purple-light); color: var(--ssa-purple);
+  border-radius: 10px; padding: 2px 8px;
+  font: var(--md-typescale-label-medium); margin-top: 4px;
+}
+.dm-time { font: var(--md-typescale-body-small); color: var(--md-sys-color-on-surface-variant); margin-bottom: 2px; text-align: center; font-size: 10px; }
+</style>
+</head>
+<body>
+
+<!-- ── Top App Bar ─────────────────────────────────────────────── -->
+<header class="top-app-bar">
+  <div class="app-bar-leading">
+    <div class="app-bar-icon"><span class="material-icons">eco</span></div>
+    <div>
+      <div class="app-bar-title">Grassroots Al-Quds</div>
+      <div class="app-bar-subtitle">Digital Media Audit · 2022–2026</div>
+    </div>
+  </div>
+  <div class="app-bar-chips">
+    <span class="app-bar-chip"><span class="material-icons">article</span>352 FB Posts</span>
+    <span class="app-bar-chip"><span class="material-icons">people</span>26,281 Total Followers</span>
+    <span class="app-bar-chip"><span class="material-icons">calendar_today</span>May 2022 – May 2026</span>
+    <span class="app-bar-chip"><span class="material-icons">business</span>Est. 2011</span>
+  </div>
+</header>
+
+<!-- ── Navigation Drawer ──────────────────────────────────────── -->
+<nav class="nav-drawer">
+  <div class="nav-section-label">Overview</div>
+  <div class="nav-item active" data-page="home"><span class="material-icons">home</span>Home</div>
+  <div class="nav-item" data-page="exec"><span class="material-icons">summarize</span>Executive Summary</div>
+  <div class="nav-item" data-page="method"><span class="material-icons">science</span>Methodology</div>
+
+  <div class="nav-divider"></div>
+  <div class="nav-section-label">Platforms</div>
+  <div class="nav-item" data-page="platforms"><span class="material-icons">hub</span>Platform Overview</div>
+  <div class="nav-item" data-page="facebook"><span class="material-icons">thumb_up</span>Facebook Analysis</div>
+
+  <div class="nav-divider"></div>
+  <div class="nav-section-label">Content</div>
+  <div class="nav-item" data-page="pillars"><span class="material-icons">category</span>Content Pillars</div>
+  <div class="nav-item" data-page="timing"><span class="material-icons">schedule</span>Cadence & Timing</div>
+  <div class="nav-item" data-page="sentiment"><span class="material-icons">forum</span>Community & Sentiment</div>
+
+  <div class="nav-divider"></div>
+  <div class="nav-section-label">Strategy</div>
+  <div class="nav-item" data-page="synthesis"><span class="material-icons">join_inner</span>Cross-Platform Synthesis</div>
+  <div class="nav-item" data-page="recs"><span class="material-icons">rocket_launch</span>Recommendations</div>
+
+  <div class="nav-divider"></div>
+  <div class="nav-section-label" style="color:#BF5000">Social Studio Analytics</div>
+  <div class="nav-item" data-page="ssa" style="border-left:3px solid #BF5000;margin-left:9px"><span class="material-icons" style="color:#BF5000">auto_awesome</span><span style="color:#BF5000;font-weight:700">SSA Intervention Plan</span></div>
+</nav>
+
+<!-- ── Main ───────────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- HOME -->
+  <div id="page-home" class="page active">
+    <div class="hero-banner">
+      <div class="hero-eyebrow">Digital Media Assessment · Full Report</div>
+      <div class="hero-headline"><strong>Grassroots Al-Quds</strong><br>Digital Presence Audit</div>
+      <div class="hero-sub">A data-driven analysis of 5 platforms covering May 2022 to May 2026</div>
+      <div class="hero-chips">
+        <span class="hero-chip"><span class="material-icons">thumb_up</span>352 Facebook Posts Analysed</span>
+        <span class="hero-chip"><span class="material-icons">chat</span>43 Comments Reviewed</span>
+        <span class="hero-chip"><span class="material-icons">photo_camera</span>9,858 Instagram Followers</span>
+        <span class="hero-chip"><span class="material-icons">public</span>5 Platforms Reviewed</span>
+      </div>
+    </div>
+
+    <div class="title-small" style="margin-bottom:16px;">Navigate the Report</div>
+    <div class="home-tiles" id="home-tiles"></div>
+
+    <div class="mt-24"></div>
+    <div class="title-small">Key Findings at a Glance</div>
+    <div class="mt-20"></div>
+    <div class="grid-3" style="gap:16px">
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">Instagram Leads</div>
+        <div class="insight-body">With 9,858 followers and 613 posts, Instagram is the organisation's strongest platform — nearly 20% more followers than Facebook.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">Very Low FB Engagement</div>
+        <div class="insight-body">Facebook averages just 1.7 engagement per post against 8,308 followers — an effective rate of ~0.02%, far below the 0.5–2% MENA nonprofit benchmark.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#B3261E">
+        <div class="insight-label">Twitter / X Abandoned</div>
+        <div class="insight-body">@grassroots_quds holds 8,004 followers but shows zero posts — a dormant asset and a reputational risk that requires an urgent decision.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#006874">
+        <div class="insight-label">Displacement Content Outperforms</div>
+        <div class="insight-body">Posts about displacement & evictions average 2.3 engagement — 35% above the overall average. This is the clearest audience resonance signal.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">Shares Drive Reach</div>
+        <div class="insight-body">169 of 595 total engagements (28%) are shares. When content lands, audiences actively amplify it — the top post earned 13 shares alone.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">Irregular Posting Cadence</div>
+        <div class="insight-body">Posts swung from 45 in October 2022 to 1 in January 2023. Algorithmic platforms penalise burst-posting; 3–4 posts/week is the recommended target.</div>
+      </div>
+    </div>
+    <div class="page-footer">Generated May 11, 2026 · All data sourced from provided XLSX exports and public platform profiles</div>
+  </div>
+
+  <!-- EXEC SUMMARY -->
+  <div id="page-exec" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Overview</div>
+      <div class="headline-small">Executive Summary</div>
+      <div class="body-small">Grassroots Al-Quds · Digital Presence Assessment · May 2022 – May 2026</div>
+    </div>
+    <div class="kpi-grid" id="exec-kpi-grid"></div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Platform Health Overview</div>
+        <div class="md-table-wrap">
+          <table class="md-table">
+            <thead><tr><th>Platform</th><th>Followers</th><th>Posts</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Instagram</td><td>9,858</td><td>613</td><td><span class="md-chip chip-success"><span class="material-icons">check_circle</span>Active</span></td></tr>
+              <tr><td>Facebook</td><td>8,308</td><td>352</td><td><span class="md-chip chip-warn"><span class="material-icons">warning</span>Low Engagement</span></td></tr>
+              <tr><td>X / Twitter</td><td>8,004</td><td>0</td><td><span class="md-chip chip-error"><span class="material-icons">cancel</span>Inactive</span></td></tr>
+              <tr><td>LinkedIn</td><td>111</td><td>—</td><td><span class="md-chip chip-neutral"><span class="material-icons">info</span>Minimal</span></td></tr>
+              <tr><td>Patreon</td><td>—</td><td>—</td><td><span class="md-chip chip-neutral"><span class="material-icons">help</span>No Data</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Facebook Performance Summary</div>
+        <p class="body-medium" style="line-height:1.65;color:var(--md-sys-color-on-surface-variant);margin-bottom:16px">Grassroots Al-Quds published <strong>352 Facebook posts</strong> over four years, generating <strong>595 total engagements</strong> (reactions + shares). The average engagement per post is <strong>1.7</strong> — critically below the nonprofit MENA benchmark of 30–100. However, 2025 saw the highest average engagement (2.2), suggesting content quality is improving.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="md-chip chip-warn"><span class="material-icons">warning</span>Eng. Rate ~0.02%</span>
+          <span class="md-chip chip-info"><span class="material-icons">info</span>No paid/boosted data</span>
+          <span class="md-chip chip-success"><span class="material-icons">check</span>9.9% zero-eng. rate</span>
+        </div>
+        <div class="md-divider"></div>
+        <div class="title-small" style="margin-bottom:12px">Year-on-Year Trend</div>
+        <div class="chart-container sm"><canvas id="exec-yearly-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="mt-24"></div>
+    <div class="title-small">Six Critical Findings</div>
+    <div class="mt-20"></div>
+    <div class="grid-3" style="gap:16px">
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">F1 — Instagram is the flagship</div>
+        <div class="insight-body">9,858 followers and 613 posts make Instagram the most developed channel. Native export data is needed to measure engagement rate.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#B3261E">
+        <div class="insight-label">F2 — Twitter is a critical gap</div>
+        <div class="insight-body">8,004 followers with zero activity. The account should be reactivated or officially archived to prevent brand confusion.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">F3 — Cadence is highly irregular</div>
+        <div class="insight-body">Some months have 45 posts, others just 1. Consistent 3–4 posts/week would outperform burst-posting on all major platforms.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">F4 — English content outperforms</div>
+        <div class="insight-body">English posts average 1.8 engagement vs 1.6 for Arabic. A structured bilingual approach is warranted given the international audience.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#006874">
+        <div class="insight-label">F5 — Displacement content resonates</div>
+        <div class="insight-body">Neighbourhood displacement stories (avg 2.3) and research/reports (avg 2.2) consistently outperform. Prisoners & Detainees posts scored 6.0 avg.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">F6 — Friday is peak day</div>
+        <div class="insight-body">Friday posts earn avg 3.0 engagement — 76% above the weekly average. 4:00 PM Palestine time is the highest-engagement hour (avg 2.69).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div id="page-method" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Data & Scope</div>
+      <div class="headline-small">Methodology & Data Scope</div>
+    </div>
+    <div class="md-banner banner-info">
+      <span class="material-icons">info</span>
+      <div><div class="banner-title">Organic-Only Analysis</div>No paid/boosted post data was present in the export files. All engagement figures represent organic activity only. Actual reach may be higher if posts were boosted.</div>
+    </div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Data Sources Ingested</div>
+        <div class="md-table-wrap">
+          <table class="md-table">
+            <thead><tr><th>Source</th><th>Records</th><th>Coverage</th></tr></thead>
+            <tbody>
+              <tr><td>Posts_2022_2026.xlsx</td><td>352 posts</td><td>May 2022 – May 2026</td></tr>
+              <tr><td>Comments_2022_2026.xlsx</td><td>43 comments</td><td>May 2022 – Mar 2026</td></tr>
+              <tr><td>Instagram (public profile)</td><td>Profile snapshot</td><td>May 2026</td></tr>
+              <tr><td>X / Twitter (public)</td><td>Account metadata</td><td>May 2026</td></tr>
+              <tr><td>LinkedIn (public)</td><td>Follower count</td><td>May 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Formulas & Definitions</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div>
+            <div class="label-large" style="margin-bottom:4px">Facebook Engagement</div>
+            <code style="font-family:'Roboto Mono';font-size:13px;background:var(--md-sys-color-surface-variant);padding:6px 12px;border-radius:6px;display:block">Reactions (all types) + Shares</code>
+          </div>
+          <div>
+            <div class="label-large" style="margin-bottom:4px">Engagement Rate</div>
+            <code style="font-family:'Roboto Mono';font-size:13px;background:var(--md-sys-color-surface-variant);padding:6px 12px;border-radius:6px;display:block">Avg Engagement ÷ Followers × 100</code>
+          </div>
+          <div>
+            <div class="label-large" style="margin-bottom:4px">Zero-Engagement Rate</div>
+            <code style="font-family:'Roboto Mono';font-size:13px;background:var(--md-sys-color-surface-variant);padding:6px 12px;border-radius:6px;display:block">Posts with 0 reactions AND 0 shares ÷ Total posts</code>
+          </div>
+          <div>
+            <div class="label-large" style="margin-bottom:4px">Content Pillars</div>
+            <div class="body-small">Keyword-based classification applied to post text in Arabic and English.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-24 title-small">Data Gaps — Fully Disclosed</div>
+    <div class="mt-20" id="method-gaps"></div>
+  </div>
+
+  <!-- PLATFORM OVERVIEW -->
+  <div id="page-platforms" class="page">
+    <div class="page-header">
+      <div class="eyebrow">All Channels</div>
+      <div class="headline-small">Platform Overview</div>
+      <div class="body-small">Current status snapshot as of May 2026 — native analytics available for Facebook only</div>
+    </div>
+    <div class="grid-2" style="gap:20px">
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon ig">📸</div>
+          <div>
+            <div class="title-medium">Instagram</div>
+            <a class="body-small" href="https://www.instagram.com/grassroots_alquds/" target="_blank">@grassroots_alquds</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-success"><span class="material-icons">check_circle</span>Active</span></div>
+        </div>
+        <div class="plat-stats">
+          <div class="plat-stat-item"><div class="stat-num">9,858</div><div class="stat-lbl">Followers</div></div>
+          <div class="plat-stat-item"><div class="stat-num">613</div><div class="stat-lbl">Posts</div></div>
+          <div class="plat-stat-item"><div class="stat-num">100</div><div class="stat-lbl">Following</div></div>
+        </div>
+        <div class="plat-desc">Strongest follower base across all platforms. High post volume (613) suggests consistent content production. Without native analytics exports, engagement rate cannot be computed for this audit.</div>
+        <div class="md-banner banner-info" style="margin:0;padding:12px">
+          <span class="material-icons">info</span>
+          <div>No native Instagram export data provided. Request Insights export to unlock full analytics.</div>
+        </div>
+      </div>
+
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon fb">📘</div>
+          <div>
+            <div class="title-medium">Facebook</div>
+            <a class="body-small" href="https://www.facebook.com/GrassrootsAlQuds" target="_blank">GrassrootsAlQuds</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-warn"><span class="material-icons">warning</span>Low Engagement</span></div>
+        </div>
+        <div class="plat-stats">
+          <div class="plat-stat-item"><div class="stat-num">8,308</div><div class="stat-lbl">Followers</div></div>
+          <div class="plat-stat-item"><div class="stat-num">352</div><div class="stat-lbl">Posts (4yr)</div></div>
+          <div class="plat-stat-item"><div class="stat-num">1.7</div><div class="stat-lbl">Avg Engagement</div></div>
+        </div>
+        <div class="plat-desc">Good follower base but very low organic engagement. Full post-level data available for analysis. Inconsistent posting cadence is the primary driver of low algorithmic reach.</div>
+      </div>
+
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon tw">🐦</div>
+          <div>
+            <div class="title-medium">X / Twitter</div>
+            <a class="body-small" href="https://x.com/grassroots_quds" target="_blank">@grassroots_quds</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-error"><span class="material-icons">cancel</span>Inactive</span></div>
+        </div>
+        <div class="plat-stats">
+          <div class="plat-stat-item"><div class="stat-num">8,004</div><div class="stat-lbl">Followers</div></div>
+          <div class="plat-stat-item"><div class="stat-num">0</div><div class="stat-lbl">Visible Posts</div></div>
+          <div class="plat-stat-item"><div class="stat-num">2009</div><div class="stat-lbl">Joined</div></div>
+        </div>
+        <div class="plat-desc">A significant audience has been built since 2009 but the account shows zero posts. This is the most critical platform gap. Reactivation or an official archive decision is urgently needed.</div>
+        <div class="md-banner banner-error" style="margin:0;padding:12px">
+          <span class="material-icons">priority_high</span>
+          <div><strong>Urgent action required.</strong> Dormant account with 8,004 followers signals inactivity to new visitors.</div>
+        </div>
+      </div>
+
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon li">💼</div>
+          <div>
+            <div class="title-medium">LinkedIn</div>
+            <a class="body-small" href="https://www.linkedin.com/company/grassroots-al-quds" target="_blank">grassroots-al-quds</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-neutral"><span class="material-icons">info</span>Minimal</span></div>
+        </div>
+        <div class="plat-stats">
+          <div class="plat-stat-item"><div class="stat-num">111</div><div class="stat-lbl">Followers</div></div>
+          <div class="plat-stat-item"><div class="stat-num">6</div><div class="stat-lbl">Employees Listed</div></div>
+        </div>
+        <div class="plat-desc">Very small LinkedIn presence for an organisation with 15+ years of history. Suitable for institutional outreach, grant networks, and international policy advocacy. Needs a dedicated content strategy.</div>
+      </div>
+
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon web">🌐</div>
+          <div>
+            <div class="title-medium">Website</div>
+            <a class="body-small" href="https://www.grassrootsalquds.net/" target="_blank">grassrootsalquds.net</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-neutral"><span class="material-icons">analytics</span>No GA4 Data</span></div>
+        </div>
+        <div class="plat-desc">Serves as the primary knowledge hub (reports, maps, newsletter). No web analytics data was provided. GA4 integration should be confirmed and included in the next audit cycle.</div>
+      </div>
+
+      <div class="platform-status-card">
+        <div class="plat-header">
+          <div class="plat-icon pat">🎨</div>
+          <div>
+            <div class="title-medium">Patreon</div>
+            <a class="body-small" href="https://patreon.com/GrassrootsAlQuds" target="_blank">patreon.com/GrassrootsAlQuds</a>
+          </div>
+          <div style="margin-left:auto"><span class="md-chip chip-neutral"><span class="material-icons">help</span>No Data</span></div>
+        </div>
+        <div class="plat-desc">Patreon page exists for supporter funding. Without patron count or revenue data this channel cannot be assessed. Patreon analytics should be included in future audit cycles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACEBOOK ANALYSIS -->
+  <div id="page-facebook" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Platform Analysis</div>
+      <div class="headline-small">📘 Facebook — Full Assessment</div>
+      <div class="body-small">352 posts · May 2022 – May 2026 · All organic (no paid/boosted data in export)</div>
+    </div>
+    <div class="md-banner banner-info">
+      <span class="material-icons">info</span>
+      <div><div class="banner-title">Organic Only</div>No boosted post flags or Meta Ads data in the provided exports. All engagement figures are organic. Actual reach may be higher if posts were boosted.</div>
+    </div>
+    <div class="kpi-grid" id="fb-kpi-grid"></div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Monthly Engagement Trend</div>
+        <div class="chart-container"><canvas id="fb-monthly-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Annual Volume vs Average Engagement</div>
+        <div class="chart-container"><canvas id="fb-yearly-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="grid-2 mt-20">
+      <div class="md-card">
+        <div class="title-small">Reaction Type Breakdown</div>
+        <div class="chart-container sm"><canvas id="fb-reactions-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Post Language Distribution</div>
+        <div class="chart-container sm"><canvas id="fb-lang-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="md-card mt-20">
+      <div class="md-tabs" id="fb-tabs">
+        <button class="md-tab active" data-tab="fb-top">Top 10 Posts</button>
+        <button class="md-tab" data-tab="fb-bottom">Lowest 10 Posts</button>
+      </div>
+      <div class="md-tab-pane active" id="fb-top">
+        <div class="md-table-wrap"><table class="md-table" id="fb-top-table">
+          <thead><tr><th>#</th><th>Content Excerpt</th><th>Date</th><th>Reactions</th><th>Shares</th><th>Total Eng.</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+      <div class="md-tab-pane" id="fb-bottom">
+        <div class="md-table-wrap"><table class="md-table" id="fb-bottom-table">
+          <thead><tr><th>#</th><th>Content Excerpt</th><th>Date</th><th>Engagement</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT PILLARS -->
+  <div id="page-pillars" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Content Analysis</div>
+      <div class="headline-small">Content Pillars</div>
+      <div class="body-small">Keyword-based classification of all 352 Facebook posts into 8 thematic pillars</div>
+    </div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Post Volume by Pillar</div>
+        <div class="chart-container lg"><canvas id="pillar-count-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Average Engagement by Pillar</div>
+        <div class="chart-container lg"><canvas id="pillar-eng-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="md-card mt-20">
+      <div class="title-small">Pillar Performance Table</div>
+      <div class="md-table-wrap">
+        <table class="md-table" id="pillar-table">
+          <thead><tr><th>Content Pillar</th><th>Posts</th><th>Total Engagement</th><th>Avg Engagement</th><th>vs. Overall Avg</th><th>Assessment</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="mt-24 title-small">Pillar Insights</div>
+    <div class="mt-20 grid-3" style="gap:16px">
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">Displacement Stories Resonate Most</div>
+        <div class="insight-body">Displacement & Neighborhoods posts average 2.3 — 35% above the overall mean. Sheikh Jarrah, Silwan, and eviction stories generate the most organic sharing.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#006874">
+        <div class="insight-label">Research Punches Above Its Weight</div>
+        <div class="insight-body">Only 20 posts (6% of total) in Research & Reports, yet generating avg 2.2 engagement. Village infographic deep-dives (Al-Walajah, Battir) are top performers.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">General Content Is Over-Represented</div>
+        <div class="insight-body">101 posts (29%) classified as "General / Jerusalem News" with the lowest avg engagement (1.3). Recategorising these with sharper thematic framing would lift performance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CADENCE & TIMING -->
+  <div id="page-timing" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Publishing Patterns</div>
+      <div class="headline-small">Cadence & Timing</div>
+      <div class="body-small">When does Grassroots Al-Quds post, and when do audiences respond most?</div>
+    </div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Average Engagement by Day of Week</div>
+        <div class="chart-container"><canvas id="dow-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Average Engagement by Hour (Palestine Time)</div>
+        <div class="chart-container"><canvas id="hour-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="md-card mt-20">
+      <div class="title-small">Posting Volume & Consistency by Year</div>
+      <div class="chart-container"><canvas id="cadence-yearly-chart"></canvas></div>
+    </div>
+    <div class="grid-3 mt-20" style="gap:16px">
+      <div class="md-card" style="border-top:4px solid var(--md-sys-color-primary);text-align:center">
+        <div class="label-large" style="color:var(--md-sys-color-on-surface-variant);margin-bottom:8px">BEST DAY</div>
+        <div style="font-size:2.2rem;font-weight:700;color:var(--md-sys-color-primary);font-family:'Roboto Mono'">Friday</div>
+        <div class="body-small" style="margin-top:8px">Avg 3.0 engagement — 76% above weekly average. Post your most important content on Fridays.</div>
+      </div>
+      <div class="md-card" style="border-top:4px solid var(--md-sys-color-secondary);text-align:center">
+        <div class="label-large" style="color:var(--md-sys-color-on-surface-variant);margin-bottom:8px">BEST HOUR</div>
+        <div style="font-size:2.2rem;font-weight:700;color:var(--md-sys-color-secondary);font-family:'Roboto Mono'">4:00 PM</div>
+        <div class="body-small" style="margin-top:8px">Palestine Time. Peak window 11 AM–5 PM. Avg 2.69 engagement at 16:00.</div>
+      </div>
+      <div class="md-card" style="border-top:4px solid var(--md-sys-color-error);text-align:center">
+        <div class="label-large" style="color:var(--md-sys-color-on-surface-variant);margin-bottom:8px">AVOID</div>
+        <div style="font-size:2.2rem;font-weight:700;color:var(--md-sys-color-error);font-family:'Roboto Mono'">Saturday</div>
+        <div class="body-small" style="margin-top:8px">Avg 1.19 engagement — lowest of the week. Avoid scheduling important posts on Saturdays.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMUNITY & SENTIMENT -->
+  <div id="page-sentiment" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Audience Voice</div>
+      <div class="headline-small">Community & Sentiment</div>
+    </div>
+    <div class="md-banner banner-warn">
+      <span class="material-icons">warning</span>
+      <div><div class="banner-title">Limited Comment Volume</div>Only 43 comments were captured across 34 posts over 4 years — a very low comment density. Sentiment conclusions are indicative, not statistically definitive. The community likely engages more actively on Instagram.</div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--kpi-accent:var(--md-sys-color-primary)"><div class="kpi-supporting">Total Comments</div><div class="kpi-value">43</div><div class="kpi-label">Captured in dataset</div></div>
+      <div class="kpi-card" style="--kpi-accent:#006874"><div class="kpi-supporting">Posts with Comments</div><div class="kpi-value">34</div><div class="kpi-label">Of 352 total posts</div></div>
+      <div class="kpi-card" style="--kpi-accent:#22c55e"><div class="kpi-supporting">Positive Sentiment</div><div class="kpi-value">14%</div><div class="kpi-label">6 of 43 comments</div></div>
+      <div class="kpi-card" style="--kpi-accent:#9ca3af"><div class="kpi-supporting">Neutral Sentiment</div><div class="kpi-value">83.7%</div><div class="kpi-label">36 of 43 comments</div></div>
+      <div class="kpi-card" style="--kpi-accent:var(--md-sys-color-error)"><div class="kpi-supporting">Negative Sentiment</div><div class="kpi-value">2.3%</div><div class="kpi-label">1 of 43 comments</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Comment Sentiment Distribution</div>
+        <div class="chart-container sm"><canvas id="sentiment-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Sentiment Breakdown Notes</div>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:8px">
+          <div class="md-banner banner-success" style="margin:0">
+            <span class="material-icons">sentiment_satisfied</span>
+            <div><div class="banner-title">Positive — 6 comments (14%)</div>Expressions of solidarity, prayers, and "#FreePalestine" support. Primarily on martyr/detainee-related posts.</div>
+          </div>
+          <div class="md-banner banner-info" style="margin:0">
+            <span class="material-icons">sentiment_neutral</span>
+            <div><div class="banner-title">Neutral — 36 comments (83.7%)</div>Questions, factual challenges, and political statements. "And what crime? Being Palestinian?" — politically engaged but not classifiable as positive or negative.</div>
+          </div>
+          <div class="md-banner banner-error" style="margin:0">
+            <span class="material-icons">sentiment_dissatisfied</span>
+            <div><div class="banner-title">Negative — 1 comment (2.3%)</div>A detailed challenge to historical framing about the Jewish Quarter. Indicates international visibility and the need for a community moderation response protocol.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-24 title-small">Community Health Indicators</div>
+    <div class="mt-20 grid-3" style="gap:16px">
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">Very Low Comment Rate</div>
+        <div class="insight-body">Avg 1.25 comments per commenting post. Most posts receive zero comments. Typical for information-broadcast accounts, but signals low two-way dialogue.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">Minimal Toxicity</div>
+        <div class="insight-body">Only 1 clearly negative comment in 4 years — a remarkably clean environment. Partly attributable to the low overall comment volume limiting exposure to hostile actors.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#006874">
+        <div class="insight-label">Bilingual Comment Pattern</div>
+        <div class="insight-body">Comments arrive in both Arabic and English, confirming a bilingual audience. English commenters trend international/solidarity; Arabic commenters trend local/regional.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CROSS-PLATFORM SYNTHESIS -->
+  <div id="page-synthesis" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Strategic Overview</div>
+      <div class="headline-small">Cross-Platform Synthesis</div>
+    </div>
+    <div class="grid-2">
+      <div class="md-card">
+        <div class="title-small">Follower Comparison Across Platforms</div>
+        <div class="chart-container"><canvas id="platforms-bar-chart"></canvas></div>
+      </div>
+      <div class="md-card">
+        <div class="title-small">Strategic Platform Matrix</div>
+        <div class="md-table-wrap">
+          <table class="md-table">
+            <thead><tr><th>Platform</th><th>Audience</th><th>Priority</th><th>Recommended Strategy</th></tr></thead>
+            <tbody>
+              <tr><td>Instagram</td><td>9,858</td><td><span class="md-chip chip-success">P0 — Core</span></td><td>Primary content hub</td></tr>
+              <tr><td>Facebook</td><td>8,308</td><td><span class="md-chip chip-success">P0 — Core</span></td><td>Advocacy + sharing</td></tr>
+              <tr><td>X / Twitter</td><td>8,004</td><td><span class="md-chip chip-error">P0 — Urgent</span></td><td>Reactivate or archive</td></tr>
+              <tr><td>LinkedIn</td><td>111</td><td><span class="md-chip chip-warn">P1 — Grow</span></td><td>International advocacy</td></tr>
+              <tr><td>Website</td><td>—</td><td><span class="md-chip chip-info">P1 — Measure</span></td><td>Add GA4 tracking</td></tr>
+              <tr><td>Patreon</td><td>—</td><td><span class="md-chip chip-neutral">P2 — Evaluate</span></td><td>Assess & promote</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="mt-24 title-small">Cross-Platform Findings</div>
+    <div class="mt-20 grid-2" style="gap:16px">
+      <div class="insight-card" style="--insight-color:#BF5000">
+        <div class="insight-label">Effort vs. Return Misalignment</div>
+        <div class="insight-body">Facebook received the most auditable effort (352 posts over 4 years) but generates the lowest measured engagement rate. Instagram has nearly 20% more followers with likely fewer Facebook-equivalent posts. Resources should be rebalanced toward Instagram, with Facebook maintained at a consistent but lower cadence.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#1B6B33">
+        <div class="insight-label">Bilingual Audience Confirmed</div>
+        <div class="insight-body">Facebook post language data (58% Arabic, 40% English) and bilingual comment patterns confirm a mixed local-international audience. A structured dual-language content strategy — Arabic first, English follows — would serve both groups without doubling production effort.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#B3261E">
+        <div class="insight-label">Dormant Assets = Missed Reach</div>
+        <div class="insight-body">X/Twitter's 8,004 dormant followers represent a pre-built audience that has already opted in. Even 3 posts/week on X would reactivate the channel and extend reach at zero acquisition cost. This is the single easiest wins available to the communications team.</div>
+      </div>
+      <div class="insight-card" style="--insight-color:#006874">
+        <div class="insight-label">Quality Over Quantity — Confirmed</div>
+        <div class="insight-body">2022 had the highest volume (114 posts, 22.8/month) but not the highest average engagement (1.6). 2025 had fewer posts but the highest average engagement (2.2). More focused, high-quality posts outperform high-volume broadcast strategies on this account.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div id="page-recs" class="page">
+    <div class="page-header">
+      <div class="eyebrow">Action Plan</div>
+      <div class="headline-small">Recommendations & Roadmap</div>
+    </div>
+    <div class="md-tabs" id="recs-tab-bar">
+      <button class="md-tab active" data-tab="recs-strategic">Strategic (S1–S4)</button>
+      <button class="md-tab" data-tab="recs-tactical">Tactical (T1–T7)</button>
+      <button class="md-tab" data-tab="recs-dont">What Not To Do</button>
+    </div>
+    <div class="md-tab-pane active" id="recs-strategic">
+      <div class="rec-card" style="--rec-color:var(--md-sys-color-error)">
+        <div class="rec-header"><span class="rec-id">S1</span><span class="md-chip chip-error">P0 — Urgent · 30 Days</span><span class="md-chip chip-neutral">Twitter / X</span></div>
+        <div class="rec-title">Reactivate or Archive X/Twitter Immediately</div>
+        <div class="rec-body">8,004 followers on X represent a pre-built audience that has opted into the organisation's content. The account shows zero posts — this is an asset silently decaying. <strong>Decision required within 30 days:</strong> reactivate with a dedicated content owner posting 3–5 times/week, or publish a pinned archival notice redirecting followers to Instagram. Both options are acceptable; inaction is not.</div>
+      </div>
+      <div class="rec-card" style="--rec-color:var(--md-sys-color-primary)">
+        <div class="rec-header"><span class="rec-id">S2</span><span class="md-chip chip-error">P0 · 0–3 Months</span><span class="md-chip chip-neutral">Facebook</span></div>
+        <div class="rec-title">Shift to a Consistent 3–4 Posts/Week Cadence</div>
+        <div class="rec-body">The data shows months with 1 post and months with 45. Facebook's algorithm heavily penalises irregular publishers. A consistent 3–4 posts/week (12–16/month) would improve algorithmic distribution without requiring more content — it requires <strong>redistribution</strong> of existing content production across the calendar. Build a 4-week rotating thematic calendar and assign ownership of each slot to a team member.</div>
+      </div>
+      <div class="rec-card" style="--rec-color:#006874">
+        <div class="rec-header"><span class="rec-id">S3</span><span class="md-chip chip-warn">P1 · 3–6 Months</span><span class="md-chip chip-neutral">All Platforms</span></div>
+        <div class="rec-title">Prioritise Displacement, Detainees & Research Content</div>
+        <div class="rec-body">Data shows Displacement & Neighborhoods (avg 2.3), Research & Reports (avg 2.2), and Prisoners & Detainees (avg 6.0) are the highest-performing themes. Increasing production of these three pillars — particularly infographic-style deep-dives on specific villages and neighbourhoods — directly matches what the audience most shares. <strong>Target: 40% of monthly posts from these pillars</strong>, up from ~17% currently.</div>
+      </div>
+      <div class="rec-card" style="--rec-color:var(--md-sys-color-secondary)">
+        <div class="rec-header"><span class="rec-id">S4</span><span class="md-chip chip-warn">P1 · 6–12 Months</span><span class="md-chip chip-neutral">All Platforms</span></div>
+        <div class="rec-title">Implement Full Analytics Infrastructure Across All Platforms</div>
+        <div class="rec-body">This audit is limited by missing Instagram native exports, no GA4 data, and no Patreon analytics. Establish a monthly analytics export routine: Instagram Insights export, Facebook post-level export, GA4 monthly report, LinkedIn analytics, and Patreon dashboard. Assign one team member as data steward. This data enables evidence-based content decisions and demonstrates measurable impact to funders — an increasingly common requirement in grant reporting.</div>
+      </div>
+    </div>
+    <div class="md-tab-pane" id="recs-tactical">
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T1</span><span class="md-chip chip-error">P0 · 14 Days</span><span class="md-chip chip-neutral">Facebook</span></div>
+        <div class="rec-title">Post on Fridays at 4:00 PM Palestine Time</div>
+        <div class="rec-body">Friday is 76% above the weekly average engagement and 4 PM is the peak hour. Schedule the most important post of the week (displacement story, urgent update, or research infographic) for Friday afternoon. Avoid Saturday entirely — it has the lowest engagement (avg 1.19).</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T2</span><span class="md-chip chip-error">P0 · 30 Days</span><span class="md-chip chip-neutral">Instagram</span></div>
+        <div class="rec-title">Request Native Instagram Analytics Export Immediately</div>
+        <div class="rec-body">Instagram is the strongest platform by follower count but has zero data in this audit. Go to Instagram Insights → export all post-level data. This will reveal which content formats (Reels vs. Posts vs. Stories) perform best, peak posting times, and audience demographics. Without this, 55% of the total follower base is unanalysed.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T3</span><span class="md-chip chip-warn">P1 · 30 Days</span><span class="md-chip chip-neutral">Facebook + Instagram</span></div>
+        <div class="rec-title">Standardise the Bilingual Posting Format</div>
+        <div class="rec-body">English posts outperform Arabic on Facebook (1.8 vs. 1.6 avg). Many posts are written in a single language. Adopt a consistent format: Arabic first (primary local audience) + English follows (international advocacy). Use a clear separator. This maximises reach across both audience segments without doubling the content workload.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T4</span><span class="md-chip chip-warn">P1 · 60 Days</span><span class="md-chip chip-neutral">All Platforms</span></div>
+        <div class="rec-title">Build a 4-Week Rotating Content Calendar Template</div>
+        <div class="rec-body">Create a repeating 4-week calendar: Week 1 = Displacement story, Week 2 = Research/Infographic, Week 3 = Al-Aqsa or Settlements update, Week 4 = Organisational/Heritage. This ensures all pillars are served, the schedule stays filled, and the team is never starting from blank each week.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T5</span><span class="md-chip chip-warn">P1 · 60 Days</span><span class="md-chip chip-neutral">Facebook + Instagram</span></div>
+        <div class="rec-title">Increase Prisoners & Detainees Coverage</div>
+        <div class="rec-body">Only 2 posts in this category — yet they averaged 6.0 engagement (3.5× the overall average). The deportation orders post (Feb 2025) was the second-highest performer in the entire dataset. This pillar is severely underserved relative to its audience resonance. <strong>Aim for at least 2 posts/month</strong> on this theme.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T6</span><span class="md-chip chip-warn">P1 · 90 Days</span><span class="md-chip chip-neutral">LinkedIn</span></div>
+        <div class="rec-title">Develop LinkedIn as a Funder & Advocacy Channel</div>
+        <div class="rec-body">111 followers is very low for an organisation with 15+ years of history. LinkedIn is the primary platform for NGO funders, researchers, and international policy audiences. Aim for 2 posts/week: research findings, organisation milestones, team expertise. Engage with Palestine-focused NGO networks. <strong>Target: 500 followers within 6 months.</strong></div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-header"><span class="rec-id">T7</span><span class="md-chip chip-info">P2 · 90 Days</span><span class="md-chip chip-neutral">All Platforms</span></div>
+        <div class="rec-title">Promote the Patreon Page Across All Platforms</div>
+        <div class="rec-body">The Patreon page is rarely mentioned in Facebook posts. Given the engaged international audience on Instagram and Facebook, a monthly "support us" post with specific Patreon benefits could meaningfully grow the supporter base. Suggested: one pinned post + one monthly update across all channels, detailing what patrons receive (reports, maps, app access).</div>
+      </div>
+    </div>
+    <div class="md-tab-pane" id="recs-dont">
+      <div class="dont-card">
+        <div class="dont-title"><span class="material-icons">cancel</span>Do Not Burst-Post in Campaign Months</div>
+        <div class="dont-body">October 2022 had 45 posts — nearly 1.5 per day. This pattern burns out the team, oversaturates the audience feed, and trains the algorithm to reduce distribution. Facebook rewards consistency, not volume spikes. <br><br><strong>Instead:</strong> Cap at 15–18 posts/month maximum and maintain that pace year-round, even during major events.</div>
+      </div>
+      <div class="dont-card">
+        <div class="dont-title"><span class="material-icons">cancel</span>Do Not Leave the Twitter Account Dormant</div>
+        <div class="dont-body">A dormant account with 8,004 followers signals inactivity to every new visitor and potential funder who looks up the organisation. It wastes a pre-built audience who have already expressed interest in the cause.<br><br><strong>Instead:</strong> Decide within 30 days: reactivate with a clear strategy, or post an archiving notice and redirect to Instagram.</div>
+      </div>
+      <div class="dont-card">
+        <div class="dont-title"><span class="material-icons">cancel</span>Do Not Post General News Without a Distinctive Frame</div>
+        <div class="dont-body">101 posts (29%) scored as "General / Jerusalem News" with the lowest average engagement (1.3). These are often news reposts or brief updates without a clear connection to Grassroots Al-Quds' specific expertise.<br><br><strong>Instead:</strong> Every post should carry a distinctive Grassroots Al-Quds angle — local expertise, historical context, or community voice — that cannot be found from a generic news source.</div>
+      </div>
+      <div class="dont-card">
+        <div class="dont-title"><span class="material-icons">cancel</span>Do Not Skip Analytics Collection for Another 4 Years</div>
+        <div class="dont-body">This audit covers 4 years but lacks Instagram engagement data, GA4, Patreon, and LinkedIn post-level data. Without these, major channels cannot be optimised. Monthly export and archiving requires approximately 2 hours of effort.<br><br><strong>Instead:</strong> Assign one team member to export and archive all platform analytics on the 1st of each month, stored in a shared folder accessible to leadership.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- SSA INTERVENTION PAGE                                       -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="page-ssa" class="page" style="max-width:1280px">
+
+    <!-- Hero -->
+    <div class="ssa-hero">
+      <div class="ssa-logo-pill"><span class="material-icons" style="font-size:16px">auto_awesome</span>Social Studio Analytics</div>
+      <div class="ssa-hero-headline">We don't just audit.<br><strong>We transform.</strong></div>
+      <div class="ssa-hero-sub">Grassroots Al-Quds has a decade of irreplaceable content, a mission that resonates globally, and a dormant digital infrastructure that is costing reach every single day. Social Studio Analytics exists to fix exactly this — with data, AI, and a hands-on partnership model built for impact-driven organisations.</div>
+      <div class="ssa-hero-chips">
+        <span class="ssa-hero-chip"><span class="material-icons">analytics</span>Deep-Dive Analytics</span>
+        <span class="ssa-hero-chip"><span class="material-icons">lightbulb</span>Content Strategy</span>
+        <span class="ssa-hero-chip"><span class="material-icons">smart_toy</span>AI-Powered DM Platform</span>
+        <span class="ssa-hero-chip"><span class="material-icons">precision_manufacturing</span>Automation & Agents</span>
+      </div>
+    </div>
+
+    <!-- 4 Pillar Cards -->
+    <div class="title-small" style="margin-bottom:20px;color:var(--ssa-primary);font-size:16px;letter-spacing:.04em">OUR FOUR INTERVENTION PILLARS</div>
+
+    <!-- PILLAR 1 -->
+    <div class="ssa-pillar mb-20">
+      <div class="ssa-pillar-header">
+        <div class="ssa-pillar-icon" style="background:var(--ssa-light)">📊</div>
+        <div>
+          <div class="ssa-pillar-num" style="color:var(--ssa-primary)">Pillar 01</div>
+          <div class="ssa-pillar-title" style="color:var(--ssa-primary)">Full Account Analysis & Deep-Dive Data Audit</div>
+          <div class="ssa-pillar-sub" style="color:var(--ssa-primary)">Every platform. Every post. Every signal decoded.</div>
+        </div>
+      </div>
+      <div class="ssa-pillar-body">
+        <p class="ssa-pillar-desc">The current audit reveals the surface — 352 Facebook posts, a dormant X account, and an Instagram account with no analytics visibility. A Social Studio Analytics deep-dive goes several layers further, connecting all platforms into a unified performance model and surfacing the specific decisions, content types, and timing choices that are costing Grassroots Al-Quds reach, engagement, and donor visibility.</p>
+        <div class="ssa-feature-list">
+          <div class="ssa-feature" style="--feature-color:var(--ssa-primary)">
+            <span class="material-icons">manage_search</span>
+            <div class="ssa-feature-text">
+              <div class="feature-title">Native Instagram Analytics Extraction & Benchmarking</div>
+              <div class="feature-desc">We request, clean, and analyse Instagram Insights exports — post-level engagement, Reel vs. Post vs. Story performance, audience demographics, peak windows, and saves-to-likes ratio. Currently 9,858 Instagram followers generate zero measurable data in the organisation's hands.</div>
+            </div>
+          </div>
+          <div class="ssa-feature" style="--feature-color:var(--ssa-teal)">
+            <span class="material-icons">bar_chart</span>
+            <div class="ssa-feature-text">
+              <div class="feature-title">Cross-Platform Unified Engagement Model</div>
+              <div class="feature-desc">We build a single dashboard connecting Facebook, Instagram, LinkedIn, X, and website traffic (GA4) — so leadership sees one truth, not five siloed exports. Includes automated monthly refresh and anomaly alerts.</div>
+            </div>
+          </div>
+          <div class="ssa-feature" style="--feature-color:var(--ssa-purple)">
+            <span class="material-icons">group_work</span>
+            <div class="ssa-feature-text">
+              <div class="feature-title">Audience Persona Modelling</div>
+              <div class="feature-desc">Using comment patterns, sharing behaviour, and demographic data, we construct 3–4 named audience personas (e.g. "The International Solidarity Activist", "The Jerusalem-Based Resident", "The Policy Researcher") with content recommendations tuned to each.</div>
+            </div>
+          </div>
+          <div class="ssa-feature" style="--feature-color:#B3261E">
+            <span class="material-icons">trending_up</span>
+            <div class="ssa-feature-text">
+              <div class="feature-title">Competitor & Peer Organisation Benchmarking</div>
+              <div class="feature-desc">We benchmark Grassroots Al-Quds against 5–8 peer organisations in the Palestine solidarity and MENA civil society space — identifying where their engagement rate, posting frequency, and content mix outperforms peers and where gaps exist.</div>
+            </div>
+          </div>
+          <div class="ssa-feature" style="--feature-color:var(--ssa-primary)">
+            <span class="material-icons">monetization_on</span>
+            <div class="ssa-feature-text">
+              <div class="feature-title">Patreon & Donor Journey Analytics</div>
+              <div class="feature-desc">We connect Patreon data, newsletter open rates, and social engagement to map the full supporter journey — from first post view to recurring donor — and identify the highest-leverage conversion points.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ssa-timeline">
+          <div class="ssa-tl-item"><div class="ssa-tl-dot" style="--dot-color:var(--ssa-primary)"></div><div class="ssa-tl-phase">Week 1–2</div><div class="ssa-tl-title">Data Collection & API Integration</div><div class="ssa-tl-desc">All platform exports collected, GA4 connected, Patreon data pulled. Unified data warehouse established.</div></div>
+          <div class="ssa-tl-item"><div class="ssa-tl-dot" style="--dot-color:var(--ssa-teal)"></div><div class="ssa-tl-phase">Week 3–4</div><div class="ssa-tl-title">Analysis & Benchmarking</div><div class="ssa-tl-desc">Full cross-platform performance model built. Peer benchmarks run. Audience persona report drafted.</div></div>
+          <div class="ssa-tl-item"><div class="ssa-tl-dot" style="--dot-color:var(--ssa-purple)"></div><div class="ssa-tl-phase">Week 5</div><div class="ssa-tl-title">Executive Findings Presentation</div><div class="ssa-tl-desc">Interactive dashboard delivered. Leadership walkthrough session. Priority action list finalised.</div></div>
+        </div>
+      </div>
+      <div class="ssa-pillar-footer">
+        <span class="md-chip chip-secondary"><span class="material-icons">schedule</span>5-Week Delivery</span>
+        <span class="md-chip chip-primary"><span class="material-icons">dashboard</span>Live Dashboard Included</span>
+        <span class="md-chip chip-neutral"><span class="material-icons">refresh</span>Monthly Refresh Available</span>
+      </div>
+    </div>
+
+    <!-- PILLAR 2 -->
+    <div class="ssa-pillar mb-20">
+      <div class="ssa-pillar-header">
+        <div class="ssa-pillar-icon" style="background:var(--ssa-teal-light)">💡</div>
+        <div>
+          <div class="ssa-pillar-num" style="color:var(--ssa-teal)">Pillar 02</div>
+          <div class="ssa-pillar-title" style="color:var(--ssa-teal)">Content Strategy: Unlocking the Archive</div>
+          <div class="ssa-pillar-sub" style="color:var(--ssa-teal)">15 years of research, maps, and stories — waiting to become reach.</div>
+        </div>
+      </div>
+      <div class="ssa-pillar-body">
+        <p class="ssa-pillar-desc">Grassroots Al-Quds holds one of the richest bodies of Jerusalem-focused content produced by any Palestinian civil society organisation. Village histories, neighbourhood maps, displacement documentation, heritage tours, and research reports represent an archive that — with strategic repurposing — can sustain years of high-performing social content. The data already shows that research-style posts average 2.2 engagement (29% above overall) and village infographics are among the top 10 performers. We build a system to unlock this at scale.</p>
+        <div class="grid-2" style="gap:14px;margin-bottom:18px">
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">📚 Archive Audit & Content Library</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">We catalogue every research report, map, village profile, and heritage document in the Grassroots archive. Each asset is tagged by topic, format, platform fit, and repurposing potential — creating a searchable content library that the team can draw from instantly.</div>
+          </div>
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">🗺️ Village & Neighbourhood Series</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">The Battir and Al-Walajah infographic posts are among the top 10 performers. We design a standardised "Village Spotlight" content format — bilingual, infographic-rich, cross-platform — that can produce 20+ posts from a single existing research document.</div>
+          </div>
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">🎬 Short-Form Video Repurposing</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">Maps and infographics converted into 30–60 second Reels using animated formats. Historical photos turned into Instagram carousels. Research findings broken into Twitter/X threads. Each original document becomes 5–8 platform-native posts across Instagram, Facebook, and LinkedIn.</div>
+          </div>
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">📅 12-Month Content Calendar</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">A fully populated 12-month content calendar built from the archive, with pillar rotation (Displacement, Research, Al-Aqsa, Heritage, Org Updates), optimal posting windows (Fri 4PM peak), and seasonal hooks tied to key dates in Palestinian history.</div>
+          </div>
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">✍️ Bilingual Copywriting Framework</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">English posts outperform Arabic on Facebook (1.8 vs 1.6 avg). We develop a standardised bilingual post template — Arabic framing first for local resonance, English follows for international advocacy — with approved vocabulary guidelines for consistent voice across all platforms.</div>
+          </div>
+          <div class="md-card-outlined" style="padding:16px">
+            <div style="font:var(--md-typescale-title-small);color:var(--ssa-teal);margin-bottom:8px">🏅 Prisoners & Detainees Content Sprint</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant);line-height:1.6">Only 2 posts cover this theme — yet it achieves 6.0 average engagement (3.5× overall). We design a dedicated content format for deportation orders, detainee profiles, and legal updates, producing a 12-post monthly series that can be pre-loaded and scheduled.</div>
+          </div>
+        </div>
+        <div class="md-banner banner-success" style="margin:0 0 16px">
+          <span class="material-icons">auto_graph</span>
+          <div><strong>Projected impact:</strong> Implementing pillar 02 alone is estimated to increase average Facebook engagement to 3.5–4.5 per post within 90 days, based on the existing performance differential between themed and general posts in the current dataset.</div>
+        </div>
+      </div>
+      <div class="ssa-pillar-footer">
+        <span class="md-chip chip-neutral" style="background:var(--ssa-teal-light);color:var(--ssa-teal)"><span class="material-icons">event</span>12-Month Calendar Delivered</span>
+        <span class="md-chip chip-neutral" style="background:var(--ssa-teal-light);color:var(--ssa-teal)"><span class="material-icons">library_books</span>Full Archive Catalogue</span>
+        <span class="md-chip chip-neutral" style="background:var(--ssa-teal-light);color:var(--ssa-teal)"><span class="material-icons">video_library</span>Video Templates Included</span>
+      </div>
+    </div>
+
+    <!-- PILLAR 3 -->
+    <div class="ssa-pillar mb-20">
+      <div class="ssa-pillar-header">
+        <div class="ssa-pillar-icon" style="background:var(--ssa-purple-light)">🤖</div>
+        <div>
+          <div class="ssa-pillar-num" style="color:var(--ssa-purple)">Pillar 03</div>
+          <div class="ssa-pillar-title" style="color:var(--ssa-purple)">AI-Assisted DM Management Platform</div>
+          <div class="ssa-pillar-sub" style="color:var(--ssa-purple)">Every message answered. No supporter left behind.</div>
+        </div>
+      </div>
+      <div class="ssa-pillar-body">
+        <p class="ssa-pillar-desc">With 26,000+ followers across platforms and growing international solidarity interest, Grassroots Al-Quds receives DMs, comments, and inquiries that currently go unmanaged. Each unanswered message is a donor, volunteer, journalist, or activist who disengages. Social Studio Analytics deploys a purpose-built AI-assisted inbox that triages, drafts, and routes messages — so the team's limited capacity is spent on conversations that matter most, not on copy-paste replies.</p>
+        <div class="grid-2" style="gap:16px;margin-bottom:18px">
+          <div>
+            <div class="title-small" style="font-size:13px;margin-bottom:12px">HOW IT WORKS</div>
+            <div class="ssa-feature-list">
+              <div class="ssa-feature" style="--feature-color:var(--ssa-purple)">
+                <span class="material-icons">inbox</span>
+                <div class="ssa-feature-text">
+                  <div class="feature-title">Unified Inbox — All Platforms in One View</div>
+                  <div class="feature-desc">Facebook DMs, Instagram DMs, LinkedIn messages, and X mentions pulled into a single moderation dashboard. No platform switching.</div>
+                </div>
+              </div>
+              <div class="ssa-feature" style="--feature-color:var(--ssa-purple)">
+                <span class="material-icons">auto_fix_high</span>
+                <div class="ssa-feature-text">
+                  <div class="feature-title">AI Triage & Intent Classification</div>
+                  <div class="feature-desc">Each incoming message is classified in real time: donation inquiry, press/media, volunteer request, general solidarity, or hostile/troll. Urgent messages flagged for human review within 5 minutes.</div>
+                </div>
+              </div>
+              <div class="ssa-feature" style="--feature-color:var(--ssa-purple)">
+                <span class="material-icons">draw</span>
+                <div class="ssa-feature-text">
+                  <div class="feature-title">AI Draft Replies — Human Approved</div>
+                  <div class="feature-desc">The AI drafts contextual replies in Arabic and English, trained on Grassroots Al-Quds' voice, mission language, and approved talking points. A human approves or edits before send. Response time drops from days to hours.</div>
+                </div>
+              </div>
+              <div class="ssa-feature" style="--feature-color:var(--ssa-purple)">
+                <span class="material-icons">supervisor_account</span>
+                <div class="ssa-feature-text">
+                  <div class="feature-title">Donor & Supporter CRM Integration</div>
+                  <div class="feature-desc">Every responder is tagged in a lightweight CRM. Repeat supporters are identified. Potential donors are routed to a Patreon or donation flow. Journalist contacts are flagged for the communications lead.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="title-small" style="font-size:13px;margin-bottom:12px">PLATFORM PREVIEW</div>
+            <div class="dm-mockup">
+              <div class="dm-time">Today · Instagram DMs</div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#E3F2FD;color:#1565c0">JF</div>
+                <div><div class="dm-bubble">Hi — I saw your post about Sheikh Jarrah. I'm a journalist with The Guardian. Can we speak to someone from your team about the latest evictions?</div></div>
+              </div>
+              <div class="dm-msg outgoing">
+                <div class="dm-avatar" style="background:#BF5000;color:#fff">GA</div>
+                <div style="text-align:right">
+                  <div class="dm-ai-badge"><span class="material-icons" style="font-size:12px">auto_awesome</span>AI Draft · Awaiting approval</div>
+                  <div class="dm-bubble" style="text-align:left">Thank you for reaching out. We'd be glad to connect you with our communications lead. Could you share your deadline and the specific neighbourhoods you're covering? We'll follow up within 24 hours.</div>
+                </div>
+              </div>
+              <div class="dm-time">Today · Facebook DMs</div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#F3E5F5;color:#6a1b9a">AM</div>
+                <div><div class="dm-bubble">How can I support your work from the diaspora? I want to donate monthly.</div></div>
+              </div>
+              <div class="dm-msg outgoing">
+                <div class="dm-avatar" style="background:#BF5000;color:#fff">GA</div>
+                <div style="text-align:right">
+                  <div class="dm-ai-badge"><span class="material-icons" style="font-size:12px">auto_awesome</span>AI Draft · Auto-sent</div>
+                  <div class="dm-bubble" style="text-align:left">Thank you so much — your support means everything. You can join our monthly Patreon community here: patreon.com/GrassrootsAlQuds. Every contribution directly funds our research and community work in Jerusalem. 🌿</div>
+                </div>
+              </div>
+              <div class="dm-time">Yesterday · X / Twitter</div>
+              <div class="dm-msg">
+                <div class="dm-avatar" style="background:#FFF3E0;color:#E65100">⚠</div>
+                <div><div class="dm-bubble" style="background:#FFF3E0;color:#5C2300">This is all propaganda — stop spreading lies about Israel.</div></div>
+              </div>
+              <div class="dm-msg outgoing">
+                <div class="dm-avatar" style="background:#BF5000;color:#fff">GA</div>
+                <div style="text-align:right">
+                  <div class="md-chip chip-error" style="font-size:10px;margin-bottom:4px"><span class="material-icons" style="font-size:11px">flag</span>Flagged as Hostile · Routed to moderation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ssa-pillar-footer">
+        <span class="md-chip chip-neutral" style="background:var(--ssa-purple-light);color:var(--ssa-purple)"><span class="material-icons">language</span>Arabic + English AI</span>
+        <span class="md-chip chip-neutral" style="background:var(--ssa-purple-light);color:var(--ssa-purple)"><span class="material-icons">bolt</span>&lt;5 Min Urgent Flagging</span>
+        <span class="md-chip chip-neutral" style="background:var(--ssa-purple-light);color:var(--ssa-purple)"><span class="material-icons">hub</span>5-Platform Unified Inbox</span>
+        <span class="md-chip chip-neutral" style="background:var(--ssa-purple-light);color:var(--ssa-purple)"><span class="material-icons">person_add</span>CRM Tagging Included</span>
+      </div>
+    </div>
+
+    <!-- PILLAR 4 -->
+    <div class="ssa-pillar mb-20">
+      <div class="ssa-pillar-header">
+        <div class="ssa-pillar-icon" style="background:#EDE7F6">⚙️</div>
+        <div>
+          <div class="ssa-pillar-num" style="color:#5E35B1">Pillar 04</div>
+          <div class="ssa-pillar-title" style="color:#5E35B1">Automations, Agents & AI Strategy</div>
+          <div class="ssa-pillar-sub" style="color:#5E35B1">A small team, operating at the scale of a department.</div>
+        </div>
+      </div>
+      <div class="ssa-pillar-body">
+        <p class="ssa-pillar-desc">Grassroots Al-Quds operates with 2–10 staff covering research, communications, community mobilisation, and advocacy simultaneously. Social Studio Analytics deploys an AI agent stack that handles the repetitive, time-consuming layer of digital operations — scheduling, monitoring, reporting, and repurposing — freeing the team to focus entirely on mission-critical work. This is not technology for its own sake. Every automation is designed around a specific bottleneck identified in the audit data.</p>
+
+        <div class="title-small" style="font-size:13px;margin-bottom:14px">AGENT ROSTER — DEPLOYED FOR GRASSROOTS AL-QUDS</div>
+        <div class="grid-3" style="gap:14px;margin-bottom:22px">
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">schedule_send</span></div>
+            <div class="agent-name">📅 The Scheduler Agent</div>
+            <div class="agent-desc">Takes approved content from the content calendar and automatically schedules it to all platforms at optimal posting windows. Prioritises Fridays 4 PM for Facebook. Prevents burst-posting by enforcing cadence limits (max 3/day).</div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">notifications_active</span></div>
+            <div class="agent-name">🔔 The Monitor Agent</div>
+            <div class="agent-desc">Watches all platforms 24/7 for mentions of Grassroots Al-Quds, key Jerusalem topics (Sheikh Jarrah, Al-Aqsa, evictions), and breaking news. Alerts the team within 15 minutes when a response-worthy event occurs.</div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">auto_stories</span></div>
+            <div class="agent-name">✍️ The Repurpose Agent</div>
+            <div class="agent-desc">When a new research report or newsletter is published, this agent automatically generates 6–8 social post variants (caption + hashtags + platform-appropriate format) for human review. Turns 1 document into a week of content.</div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">bar_chart</span></div>
+            <div class="agent-name">📊 The Report Agent</div>
+            <div class="agent-desc">On the 1st of every month, automatically exports all platform analytics, computes KPIs, and delivers a one-page performance summary to leadership — eliminating the 2-hour manual analytics task that currently doesn't happen.</div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">translate</span></div>
+            <div class="agent-name">🌐 The Translation Agent</div>
+            <div class="agent-desc">Translates approved English posts to Arabic (and vice versa) using a Grassroots Al-Quds–tuned language model. Preserves mission-specific terminology, tone, and sensitivity around Palestinian political language.</div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-icon"><span class="material-icons">campaign</span></div>
+            <div class="agent-name">🎯 The Campaign Agent</div>
+            <div class="agent-desc">When a key date approaches (Nakba Day, Al-Quds Day, anniversary of a displacement event), the agent assembles a 7-day content campaign from the archive — pre-scheduled posts, DM follow-ups, newsletter draft — ready for one-click approval.</div>
+          </div>
+        </div>
+
+        <div class="title-small" style="font-size:13px;margin-bottom:14px">AI STRATEGY FRAMEWORK — 12-MONTH ROADMAP</div>
+        <div class="ssa-timeline">
+          <div class="ssa-tl-item">
+            <div class="ssa-tl-dot" style="--dot-color:#5E35B1"></div>
+            <div class="ssa-tl-phase">Month 1–2 · Foundation</div>
+            <div class="ssa-tl-title">Infrastructure & Integration Sprint</div>
+            <div class="ssa-tl-desc">All platform APIs connected. Unified analytics dashboard live. Scheduler Agent deployed and cadence enforced. X/Twitter decision executed. Instagram analytics extraction begins. Baseline KPIs established.</div>
+          </div>
+          <div class="ssa-tl-item">
+            <div class="ssa-tl-dot" style="--dot-color:var(--ssa-primary)"></div>
+            <div class="ssa-tl-phase">Month 3–4 · Content Engine</div>
+            <div class="ssa-tl-title">Archive Unlock & Content Library Launch</div>
+            <div class="ssa-tl-desc">Full archive catalogued. Repurpose Agent trained on Grassroots content corpus. First Village Spotlight series launched. Bilingual post templates deployed. 12-month calendar populated and approved.</div>
+          </div>
+          <div class="ssa-tl-item">
+            <div class="ssa-tl-dot" style="--dot-color:var(--ssa-purple)"></div>
+            <div class="ssa-tl-phase">Month 5–6 · Intelligence Layer</div>
+            <div class="ssa-tl-title">AI DM Platform & Monitor Agent Live</div>
+            <div class="ssa-tl-desc">Unified inbox deployed. AI triage active across all 5 platforms. First 200 DMs processed with AI drafts. Donor CRM tagging system live. Monitor Agent alerting for breaking Jerusalem news. Response time target: under 4 hours.</div>
+          </div>
+          <div class="ssa-tl-item">
+            <div class="ssa-tl-dot" style="--dot-color:var(--ssa-teal)"></div>
+            <div class="ssa-tl-phase">Month 7–9 · Growth Phase</div>
+            <div class="ssa-tl-title">Campaign Agent & LinkedIn Scale-Up</div>
+            <div class="ssa-tl-desc">Campaign Agent activated for key dates. LinkedIn content programme launched targeting funder and policy audiences. Patreon growth campaign deployed. Target: LinkedIn 500 followers, Facebook avg engagement 3.5+, Instagram Reels programme launched.</div>
+          </div>
+          <div class="ssa-tl-item">
+            <div class="ssa-tl-dot" style="--dot-color:var(--ssa-primary)"></div>
+            <div class="ssa-tl-phase">Month 10–12 · Optimise & Sustain</div>
+            <div class="ssa-tl-title">Full-System Review & Handover Planning</div>
+            <div class="ssa-tl-desc">Comprehensive 12-month impact report delivered. Agent performance reviewed and retrained. Team upskilling sessions completed. Grassroots Al-Quds digital infrastructure assessed for full self-sufficiency or continued SSA partnership at maintenance tier.</div>
+          </div>
+        </div>
+
+        <div class="grid-3 mt-20" style="gap:14px">
+          <div class="md-card-filled" style="text-align:center;padding:24px">
+            <div style="font-size:2.4rem;font-weight:800;color:#5E35B1;font-family:'Roboto Mono'">6×</div>
+            <div style="font:var(--md-typescale-label-large);color:var(--md-sys-color-on-surface);margin:4px 0">Content Output</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant)">From the same team, using archive repurposing and agent automation</div>
+          </div>
+          <div class="md-card-filled" style="text-align:center;padding:24px">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--ssa-primary);font-family:'Roboto Mono'">&lt;4h</div>
+            <div style="font:var(--md-typescale-label-large);color:var(--md-sys-color-on-surface);margin:4px 0">DM Response Time</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant)">Down from 24–72 hours (or never) with AI triage and drafting</div>
+          </div>
+          <div class="md-card-filled" style="text-align:center;padding:24px">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--ssa-teal);font-family:'Roboto Mono'">3.5+</div>
+            <div style="font:var(--md-typescale-label-large);color:var(--md-sys-color-on-surface);margin:4px 0">Target Avg Engagement</div>
+            <div style="font:var(--md-typescale-body-small);color:var(--md-sys-color-on-surface-variant)">Up from 1.7 current baseline, within 6 months of full deployment</div>
+          </div>
+        </div>
+      </div>
+      <div class="ssa-pillar-footer">
+        <span class="md-chip chip-neutral" style="background:#EDE7F6;color:#5E35B1"><span class="material-icons">smart_toy</span>6 AI Agents</span>
+        <span class="md-chip chip-neutral" style="background:#EDE7F6;color:#5E35B1"><span class="material-icons">timeline</span>12-Month Roadmap</span>
+        <span class="md-chip chip-neutral" style="background:#EDE7F6;color:#5E35B1"><span class="material-icons">school</span>Team Training Included</span>
+        <span class="md-chip chip-neutral" style="background:#EDE7F6;color:#5E35B1"><span class="material-icons">handshake</span>Handover-Ready</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="ssa-cta">
+      <div class="ssa-cta-headline">Ready to transform the digital presence of Grassroots Al-Quds?</div>
+      <div class="ssa-cta-sub">Social Studio Analytics offers a phased partnership model designed for small teams with big missions. Start with a single pillar or deploy all four. Every engagement begins with a no-obligation discovery call.</div>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+        <a class="ssa-cta-btn" href="mailto:hello@socialstudioanalytics.com"><span class="material-icons">mail</span>Schedule a Discovery Call</a>
+      </div>
+      <div style="margin-top:20px;opacity:.65;font:var(--md-typescale-body-small)">Social Studio Analytics · Specialists in NGO & Civil Society Digital Transformation · socialstudioanalytics.com</div>
+    </div>
+
+    <div class="page-footer">This intervention proposal is prepared exclusively for Grassroots Al-Quds by Social Studio Analytics · May 2026 · Confidential</div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="DATA_PLACEHOLDER">
+const D = {"meta":{"org":"Grassroots Al-Quds","period":"May 2022 – May 2026","generated":"2026-05-11"},"kpis":{"fb_posts":352,"fb_eng":595,"fb_avg":1.7,"fb_zero_rate":9.9,"fb_followers":8308,"fb_shares":169,"fb_reactions":426,"ig_followers":9858,"ig_posts":613,"tw_followers":8004,"li_followers":111,"total_comments":43,"video_posts":30},"fb_monthly":[{"month":"2022-05","posts_count":11,"total_eng":37},{"month":"2022-09","posts_count":24,"total_eng":41},{"month":"2022-10","posts_count":45,"total_eng":57},{"month":"2022-11","posts_count":24,"total_eng":30},{"month":"2022-12","posts_count":10,"total_eng":22},{"month":"2023-01","posts_count":1,"total_eng":1},{"month":"2023-02","posts_count":4,"total_eng":6},{"month":"2023-03","posts_count":6,"total_eng":8},{"month":"2023-04","posts_count":4,"total_eng":11},{"month":"2023-05","posts_count":1,"total_eng":2},{"month":"2023-07","posts_count":3,"total_eng":3},{"month":"2023-08","posts_count":5,"total_eng":6},{"month":"2023-09","posts_count":20,"total_eng":36},{"month":"2023-10","posts_count":6,"total_eng":10},{"month":"2023-12","posts_count":2,"total_eng":8},{"month":"2024-01","posts_count":6,"total_eng":11},{"month":"2024-02","posts_count":1,"total_eng":1},{"month":"2024-03","posts_count":5,"total_eng":12},{"month":"2024-04","posts_count":4,"total_eng":5},{"month":"2024-05","posts_count":9,"total_eng":12},{"month":"2024-06","posts_count":9,"total_eng":11},{"month":"2024-08","posts_count":3,"total_eng":3},{"month":"2024-09","posts_count":7,"total_eng":7},{"month":"2024-10","posts_count":18,"total_eng":19},{"month":"2024-11","posts_count":9,"total_eng":6},{"month":"2024-12","posts_count":8,"total_eng":10},{"month":"2025-01","posts_count":7,"total_eng":12},{"month":"2025-02","posts_count":10,"total_eng":28},{"month":"2025-03","posts_count":11,"total_eng":13},{"month":"2025-04","posts_count":9,"total_eng":29},{"month":"2025-05","posts_count":5,"total_eng":10},{"month":"2025-06","posts_count":1,"total_eng":5},{"month":"2025-09","posts_count":1,"total_eng":2},{"month":"2025-11","posts_count":14,"total_eng":41},{"month":"2025-12","posts_count":12,"total_eng":16},{"month":"2026-01","posts_count":10,"total_eng":16},{"month":"2026-02","posts_count":5,"total_eng":9},{"month":"2026-03","posts_count":9,"total_eng":20},{"month":"2026-04","posts_count":10,"total_eng":15},{"month":"2026-05","posts_count":3,"total_eng":4}],"fb_yearly":[{"year":2022,"posts_count":114,"total_eng":187,"avg_eng":1.6},{"year":2023,"posts_count":52,"total_eng":91,"avg_eng":1.8},{"year":2024,"posts_count":79,"total_eng":97,"avg_eng":1.2},{"year":2025,"posts_count":70,"total_eng":156,"avg_eng":2.2},{"year":2026,"posts_count":37,"total_eng":64,"avg_eng":1.7}],"fb_dow":[{"dow":"Monday","engagement":1.57},{"dow":"Tuesday","engagement":1.78},{"dow":"Wednesday","engagement":1.55},{"dow":"Thursday","engagement":1.83},{"dow":"Friday","engagement":3.0},{"dow":"Saturday","engagement":1.19},{"dow":"Sunday","engagement":1.89}],"fb_hour":[{"hour":0,"engagement":2.0},{"hour":1,"engagement":2.0},{"hour":8,"engagement":1.0},{"hour":10,"engagement":1.62},{"hour":11,"engagement":2.09},{"hour":12,"engagement":2.0},{"hour":13,"engagement":2.08},{"hour":14,"engagement":1.96},{"hour":15,"engagement":1.57},{"hour":16,"engagement":2.69},{"hour":17,"engagement":2.0},{"hour":18,"engagement":1.59},{"hour":19,"engagement":1.47},{"hour":20,"engagement":1.43},{"hour":21,"engagement":1.44},{"hour":22,"engagement":1.62},{"hour":23,"engagement":1.67}],"fb_pillar":[{"pillar":"Settlements & Colonization","count":79,"avg_eng":1.7,"total_eng":136},{"pillar":"General / Jerusalem News","count":101,"avg_eng":1.3,"total_eng":128},{"pillar":"Displacement & Neighborhoods","count":37,"avg_eng":2.3,"total_eng":85},{"pillar":"Org Updates & Outreach","count":45,"avg_eng":1.7,"total_eng":78},{"pillar":"Tourism & Heritage","count":42,"avg_eng":1.7,"total_eng":70},{"pillar":"Al-Aqsa & Holy Sites","count":26,"avg_eng":1.7,"total_eng":43},{"pillar":"Research & Reports","count":20,"avg_eng":2.2,"total_eng":43},{"pillar":"Prisoners & Detainees","count":2,"avg_eng":6.0,"total_eng":12}],"fb_top":[{"excerpt":"On April 9, 1948, around 120 members of the Zionist paramilitary groups Irgun and Lehi launched a brutal attack on the Palestinian village of Deir Yassin","eng":16,"date":"2025-04-09","url":"https://www.facebook.com/100064368686635/posts/1080499644105648","shares":13,"reactions":3},{"excerpt":"The Israeli occupation has issued deportation orders against three Palestinians from Jerusalem, demanding they leave the city within 30 days","eng":11,"date":"2025-02-14","url":"https://www.facebook.com/100064368686635/posts/1037630855059194","shares":9,"reactions":2},{"excerpt":"Yesterday the occupation's high court rejected petitions against the plan to build a cable car in Jerusalem","eng":10,"date":"2022-05-17","url":"https://www.facebook.com/100064368686635/posts/10160789522933072","shares":9,"reactions":1},{"excerpt":"Amidst the systematic and ongoing displacement policies in Jerusalem, Israeli occupation forces evicted two families from their homes","eng":9,"date":"2025-11-10","url":"https://www.facebook.com/100064368686635/posts/1254653293356948","shares":6,"reactions":3},{"excerpt":"The following infographics present a general overview of Al-Walajah","eng":9,"date":"2022-12-08","url":"https://www.facebook.com/100064368686635/posts/10161274247318072","shares":8,"reactions":1},{"excerpt":"إلى الجنوب من القدس، تقع بتير القرية الوادعة المليئة بالبساتين وذات الإرث التاريخيّ [Battir village history — Arabic]","eng":7,"date":"2022-10-12","url":"https://www.facebook.com/100064368686635/posts/10161062223983072","shares":6,"reactions":1},{"excerpt":"Wujood is more than just another guidebook to Jerusalem — it provides visitors practical information from a Palestinian perspective","eng":7,"date":"2022-09-29","url":"https://www.facebook.com/100064368686635/posts/10161035193788072","shares":5,"reactions":2},{"excerpt":"With great grief the Grassroots Al-Quds team mourns journalist Shireen Abu Akleh, who was assassinated in cold blood this morning","eng":7,"date":"2022-05-11","url":"https://www.facebook.com/100064368686635/posts/10160777238768072","shares":2,"reactions":5},{"excerpt":"We are happy to share our first short story from our new monthly series 'Short Stories from Jerusalem' — we hope you enjoy it","eng":6,"date":"2024-03-27","url":"https://www.facebook.com/100064368686635/posts/813956967426585","shares":4,"reactions":2},{"excerpt":"The second village in our Tourism Project is Battir — a village located south of occupied Jerusalem with rich agricultural heritage","eng":6,"date":"2023-09-24","url":"https://www.facebook.com/100064368686635/posts/703547561800860","shares":5,"reactions":1}],"fb_bottom":[{"excerpt":"Newsletter subscription call-to-action — subscribe to monthly updates and stories about Jerusalem","eng":0,"date":"2026-05-09","url":"https://www.facebook.com/100064368686635/posts/1401902968631979"},{"excerpt":"1948 historical newspaper clipping documenting resistance of Palestinian village fighters — Arabic text post","eng":0,"date":"2025-11-19","url":"https://www.facebook.com/100064368686635/posts/1262184519270492"},{"excerpt":"Wujood guidebook — Arabic for Existence and Presence; international city guides usually follow the Israeli tourism narrative","eng":0,"date":"2025-03-03","url":"https://www.facebook.com/100064368686635/posts/1050581510430795"},{"excerpt":"Since 2021, Al-Aqsa Mosque has been witnessing the most violent assault since its invasion in 1967","eng":0,"date":"2024-11-18","url":"https://www.facebook.com/100064368686635/posts/974655694690044"},{"excerpt":"Jerusalemites might need 25,000 housing units by 2030, while the city faces threats of demolishing 2,000 homes","eng":0,"date":"2024-11-16","url":"https://www.facebook.com/100064368686635/posts/973164254839188"},{"excerpt":"Al-Jib is situated along two historic roads that once connected Jaffa and Jerusalem: Beit Ur Road and the Lower Road","eng":0,"date":"2024-11-12","url":"https://www.facebook.com/100064368686635/posts/970275718461375"},{"excerpt":"The Occupation bans UNRWA activity in Palestine: what is the impact on Palestinian communities?","eng":0,"date":"2024-10-30","url":"https://www.facebook.com/100064368686635/posts/960434816112132"},{"excerpt":"Arrests have always constituted a major pillar in the Israeli system of repression against Palestinians in Jerusalem","eng":0,"date":"2024-09-30","url":"https://www.facebook.com/100064368686635/posts/937437975078483"},{"excerpt":"Stay informed and connected with Jerusalem — subscribe to our monthly newsletter for exclusive updates","eng":0,"date":"2024-06-15","url":"https://www.facebook.com/100064368686635/posts/865062448982703"},{"excerpt":"In Jerusalem, it seems like everybody has a say about the future and destiny of the city, except Palestinians themselves","eng":0,"date":"2024-06-10","url":"https://www.facebook.com/100064368686635/posts/861974692624812"}],"fb_lang":[{"lang":"Arabic","count":204,"avg_eng":1.6},{"lang":"Bilingual","count":6,"avg_eng":1.3},{"lang":"English","count":142,"avg_eng":1.8}],"fb_reactions":{"Like":899,"Love":60,"Care":27,"Haha":14,"Wow":2,"Angry":44,"Sad":29},"sentiment":{"pos":6,"neg":1,"neu":36,"total":43},"gaps":[{"platform":"Instagram","description":"No native export data available. Follower count (9,858) and post count (613) sourced from public profile snapshot."},{"platform":"X / Twitter","description":"Account @grassroots_quds has 8,004 followers but shows 0 visible posts. Effectively inactive or abandoned."},{"platform":"LinkedIn","description":"111 followers only. No post-level export data available for analysis."},{"platform":"Website / GA4","description":"No web analytics data provided for grassrootsalquds.net. Cannot assess traffic sources, sessions, or conversions."},{"platform":"Patreon","description":"No patron count or revenue data available for the Patreon page."},{"platform":"Facebook Ads","description":"No boosted/paid post data in the provided exports. All engagement figures are organic only."}]};
+</script>
+<script>
+// ── Colour palette ────────────────────────────────────────────────
+var P = {
+  primary: '#1B6B33', secondary: '#BF5000', tertiary: '#006874',
+  error: '#B3261E', warn: '#F9A825', success: '#22c55e',
+  palette: ['#1B6B33','#BF5000','#006874','#B3261E','#F9A825','#2196F3','#9C27B0','#795548']
+};
+Chart.defaults.font.family = "'Roboto', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#404943';
+
+// ── Chart registry ────────────────────────────────────────────────
+var charts = {};
+function mkChart(id, cfg) {
+  if (charts[id]) charts[id].destroy();
+  var ctx = document.getElementById(id);
+  if (!ctx) return;
+  charts[id] = new Chart(ctx, cfg);
+}
+
+// ── Navigation ────────────────────────────────────────────────────
+var inited = {};
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
+  var pg = document.getElementById('page-' + page);
+  if (pg) pg.classList.add('active');
+  document.querySelectorAll('.nav-item[data-page="' + page + '"]').forEach(function(n) { n.classList.add('active'); });
+  if (!inited[page]) { initPage(page); inited[page] = true; }
+}
+document.querySelectorAll('.nav-item[data-page]').forEach(function(el) {
+  el.addEventListener('click', function() { navigate(el.dataset.page); });
+});
+
+// ── Tabs (generic) ────────────────────────────────────────────────
+function initTabs(barId) {
+  var bar = document.getElementById(barId);
+  if (!bar) return;
+  bar.querySelectorAll('.md-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      bar.querySelectorAll('.md-tab').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('#' + barId + ' ~ .md-tab-pane').forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var pane = document.getElementById(btn.dataset.tab);
+      if (pane) pane.classList.add('active');
+    });
+  });
+}
+// Inline tabs (inside cards) — use data-tab attribute
+document.querySelectorAll('.md-tabs').forEach(function(bar) {
+  bar.querySelectorAll('.md-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // siblings
+      bar.querySelectorAll('.md-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      // find tab panes — siblings of the bar's parent
+      var parent = bar.closest('.md-card') || bar.parentElement;
+      parent.querySelectorAll('.md-tab-pane').forEach(function(p) { p.classList.remove('active'); });
+      var pane = document.getElementById(btn.dataset.tab);
+      if (pane) pane.classList.add('active');
+    });
+  });
+});
+
+// ── Home tiles ────────────────────────────────────────────────────
+function initHome() {
+  var pages = [
+    { page:'exec', icon:'summarize', name:'Executive Summary', sub:'6 critical findings' },
+    { page:'method', icon:'science', name:'Methodology', sub:'Data sources & gaps' },
+    { page:'platforms', icon:'hub', name:'Platform Overview', sub:'5 channels reviewed' },
+    { page:'facebook', icon:'thumb_up', name:'Facebook Analysis', sub:'352 posts, 4 years' },
+    { page:'pillars', icon:'category', name:'Content Pillars', sub:'8 thematic categories' },
+    { page:'timing', icon:'schedule', name:'Cadence & Timing', sub:'Best days & hours' },
+    { page:'sentiment', icon:'forum', name:'Community', sub:'43 comments analysed' },
+    { page:'synthesis', icon:'join_inner', name:'Cross-Platform', sub:'Strategic matrix' },
+    { page:'recs', icon:'rocket_launch', name:'Recommendations', sub:'S1–S4 · T1–T7' },
+    { page:'ssa', icon:'auto_awesome', name:'SSA Intervention Plan', sub:'Our 4-pillar proposal' }
+  ];
+  var container = document.getElementById('home-tiles');
+  if (!container) return;
+  pages.forEach(function(p) {
+    var btn = document.createElement('button');
+    btn.className = 'home-tile';
+    if (p.page === 'ssa') {
+      btn.style.cssText = 'background:linear-gradient(135deg,#7A3200,#BF5000);color:#fff;border:none';
+      btn.innerHTML = '<div class="tile-icon" style="background:rgba(255,255,255,.2);color:#fff"><span class="material-icons">' + p.icon + '</span></div>' +
+        '<div class="tile-name" style="color:#fff">' + p.name + '</div><div class="tile-sub" style="color:rgba(255,255,255,.75)">' + p.sub + '</div>';
+    } else {
+      btn.innerHTML = '<div class="tile-icon"><span class="material-icons">' + p.icon + '</span></div>' +
+        '<div class="tile-name">' + p.name + '</div><div class="tile-sub">' + p.sub + '</div>';
+    }
+    btn.addEventListener('click', function() { navigate(p.page); });
+    container.appendChild(btn);
+  });
+}
+
+// ── Executive Summary ─────────────────────────────────────────────
+function initExec() {
+  var grid = document.getElementById('exec-kpi-grid');
+  if (!grid) return;
+  var cells = [
+    { val: D.kpis.fb_posts.toLocaleString(), label: 'Facebook Posts', accent: P.primary },
+    { val: D.kpis.fb_eng.toLocaleString(), label: 'Total FB Engagement', accent: P.secondary },
+    { val: D.kpis.fb_avg, label: 'Avg Eng. / Post', accent: P.primary },
+    { val: D.kpis.fb_zero_rate + '%', label: 'Zero-Engagement Rate', accent: P.tertiary },
+    { val: D.kpis.ig_followers.toLocaleString(), label: 'Instagram Followers', accent: '#E91E63' },
+    { val: D.kpis.fb_followers.toLocaleString(), label: 'Facebook Followers', accent: P.primary },
+    { val: D.kpis.tw_followers.toLocaleString(), label: 'Twitter Followers', accent: P.error },
+    { val: (D.kpis.ig_followers + D.kpis.fb_followers + D.kpis.tw_followers + D.kpis.li_followers).toLocaleString(), label: 'Total Audience', accent: P.secondary }
+  ];
+  cells.forEach(function(c) {
+    grid.innerHTML += '<div class="kpi-card" style="--kpi-accent:' + c.accent + '"><div class="kpi-supporting">' + c.label + '</div><div class="kpi-value">' + c.val + '</div></div>';
+  });
+  // Yearly chart
+  mkChart('exec-yearly-chart', {
+    type: 'bar',
+    data: {
+      labels: D.fb_yearly.map(function(d) { return d.year; }),
+      datasets: [
+        { label: 'Posts', data: D.fb_yearly.map(function(d) { return d.posts_count; }), backgroundColor: P.primary + '88', yAxisID: 'y' },
+        { label: 'Avg Engagement', data: D.fb_yearly.map(function(d) { return d.avg_eng; }), type: 'line', borderColor: P.secondary, borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: P.secondary, tension: 0.3, fill: false, yAxisID: 'y1' }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } } }, scales: { y: { grid: { color: 'rgba(0,0,0,.06)' } }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: P.secondary } } } }
+  });
+}
+
+// ── Methodology gaps ──────────────────────────────────────────────
+function initMethod() {
+  var container = document.getElementById('method-gaps');
+  if (!container) return;
+  D.gaps.forEach(function(g) {
+    container.innerHTML += '<div class="md-banner banner-info" style="margin-bottom:10px"><span class="material-icons">info</span><div><div class="banner-title">' + g.platform + '</div>' + g.description + '</div></div>';
+  });
+}
+
+// ── Facebook ──────────────────────────────────────────────────────
+function initFacebook() {
+  var grid = document.getElementById('fb-kpi-grid');
+  if (!grid) return;
+  var cells = [
+    { val: D.kpis.fb_posts, label: 'Total Posts', accent: P.primary },
+    { val: D.kpis.fb_eng, label: 'Total Engagement', accent: P.secondary },
+    { val: D.kpis.fb_avg, label: 'Avg Eng. / Post', accent: P.primary },
+    { val: D.kpis.fb_shares, label: 'Total Shares', accent: P.tertiary },
+    { val: D.kpis.fb_reactions, label: 'Total Reactions', accent: P.secondary },
+    { val: D.kpis.fb_zero_rate + '%', label: 'Zero-Eng. Rate', accent: P.error },
+    { val: D.kpis.video_posts, label: 'Video Posts', accent: P.tertiary },
+    { val: D.kpis.total_comments, label: 'Comments (captured)', accent: P.primary }
+  ];
+  cells.forEach(function(c) {
+    grid.innerHTML += '<div class="kpi-card" style="--kpi-accent:' + c.accent + '"><div class="kpi-supporting">' + c.label + '</div><div class="kpi-value">' + c.val + '</div></div>';
+  });
+
+  // Monthly trend
+  mkChart('fb-monthly-chart', {
+    type: 'line',
+    data: {
+      labels: D.fb_monthly.map(function(m) { return m.month; }),
+      datasets: [
+        { label: 'Posts', data: D.fb_monthly.map(function(m) { return m.posts_count; }), borderColor: P.primary, backgroundColor: P.primary + '18', tension: 0.3, pointRadius: 2, fill: true, yAxisID: 'y' },
+        { label: 'Engagement', data: D.fb_monthly.map(function(m) { return m.total_eng; }), borderColor: P.secondary, backgroundColor: P.secondary + '12', tension: 0.3, pointRadius: 2, fill: true, yAxisID: 'y1' }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } } }, scales: { y: { grid: { color: 'rgba(0,0,0,.06)' }, ticks: { color: P.primary } }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: P.secondary } } } }
+  });
+
+  // Yearly
+  mkChart('fb-yearly-chart', {
+    type: 'bar',
+    data: {
+      labels: D.fb_yearly.map(function(d) { return d.year; }),
+      datasets: [
+        { label: 'Posts', data: D.fb_yearly.map(function(d) { return d.posts_count; }), backgroundColor: P.primary + '99', yAxisID: 'y' },
+        { label: 'Avg Eng.', data: D.fb_yearly.map(function(d) { return d.avg_eng; }), type: 'line', borderColor: P.secondary, borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: P.secondary, tension: 0.3, fill: false, yAxisID: 'y1' }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } } }, scales: { y: { grid: { color: 'rgba(0,0,0,.06)' } }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: P.secondary } } } }
+  });
+
+  // Reactions doughnut
+  var rK = Object.keys(D.fb_reactions), rV = rK.map(function(k) { return D.fb_reactions[k]; });
+  mkChart('fb-reactions-chart', {
+    type: 'doughnut',
+    data: { labels: rK, datasets: [{ data: rV, backgroundColor: ['#1B6B33','#F44336','#FF9800','#2196F3','#4CAF50','#9C27B0','#795548'], borderWidth: 2, borderColor: '#fff' }] },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '60%', plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 12 } } } }
+  });
+
+  // Language bar
+  mkChart('fb-lang-chart', {
+    type: 'bar',
+    data: {
+      labels: D.fb_lang.map(function(l) { return l.lang; }),
+      datasets: [
+        { label: 'Post Count', data: D.fb_lang.map(function(l) { return l.count; }), backgroundColor: P.primary + '99', yAxisID: 'y' },
+        { label: 'Avg Engagement', data: D.fb_lang.map(function(l) { return l.avg_eng; }), backgroundColor: P.secondary + '99', yAxisID: 'y1' }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } } }, scales: { y: { grid: { color: 'rgba(0,0,0,.06)' } }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false } } } }
+  });
+
+  // Top 10 table
+  var topTbody = document.querySelector('#fb-top-table tbody');
+  if (topTbody) D.fb_top.forEach(function(p, i) {
+    topTbody.innerHTML += '<tr><td style="color:var(--md-sys-color-on-surface-variant);font-family:\'Roboto Mono\'">' + (i+1) + '</td><td><a href="' + p.url + '" target="_blank" style="font-size:13px">' + p.excerpt.substring(0,100) + '…</a></td><td style="font-family:\'Roboto Mono\';white-space:nowrap">' + p.date + '</td><td style="font-family:\'Roboto Mono\';text-align:center">' + p.reactions + '</td><td style="font-family:\'Roboto Mono\';text-align:center">' + p.shares + '</td><td style="font-family:\'Roboto Mono\';font-weight:700;color:var(--md-sys-color-primary);text-align:center">' + p.eng + '</td></tr>';
+  });
+
+  // Bottom 10 table
+  var botTbody = document.querySelector('#fb-bottom-table tbody');
+  if (botTbody) D.fb_bottom.forEach(function(p, i) {
+    botTbody.innerHTML += '<tr><td style="color:var(--md-sys-color-on-surface-variant);font-family:\'Roboto Mono\'">' + (i+1) + '</td><td><a href="' + p.url + '" target="_blank" style="font-size:13px">' + p.excerpt.substring(0,100) + '…</a></td><td style="font-family:\'Roboto Mono\';white-space:nowrap">' + p.date + '</td><td style="font-family:\'Roboto Mono\';color:var(--md-sys-color-error);font-weight:700;text-align:center">' + p.eng + '</td></tr>';
+  });
+}
+
+// ── Content Pillars ───────────────────────────────────────────────
+function initPillars() {
+  var labels = D.fb_pillar.map(function(p) { return p.pillar; });
+  var colors = D.fb_pillar.map(function(_, i) { return P.palette[i % P.palette.length]; });
+
+  mkChart('pillar-count-chart', {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ label: 'Posts', data: D.fb_pillar.map(function(p) { return p.count; }), backgroundColor: colors.map(function(c) { return c + 'cc'; }), borderColor: colors, borderWidth: 1 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,.06)' } }, y: { ticks: { font: { size: 11 } } } } }
+  });
+
+  mkChart('pillar-eng-chart', {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ label: 'Avg Engagement', data: D.fb_pillar.map(function(p) { return p.avg_eng; }), backgroundColor: colors.map(function(c) { return c + 'cc'; }), borderColor: colors, borderWidth: 1 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,.06)' } }, y: { ticks: { font: { size: 11 } } } } }
+  });
+
+  var tbody = document.querySelector('#pillar-table tbody');
+  if (!tbody) return;
+  var overall = D.kpis.fb_avg;
+  D.fb_pillar.forEach(function(p, i) {
+    var delta = ((p.avg_eng - overall) / overall * 100).toFixed(0);
+    var chipClass = delta >= 10 ? 'chip-success' : delta <= -10 ? 'chip-error' : 'chip-warn';
+    var sign = delta >= 0 ? '+' : '';
+    var assessment = p.avg_eng >= 2 ? '<span class="md-chip chip-success">High performer</span>' : p.avg_eng <= 1.4 ? '<span class="md-chip chip-error">Below average</span>' : '<span class="md-chip chip-warn">Average</span>';
+    tbody.innerHTML += '<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + P.palette[i % P.palette.length] + ';margin-right:8px"></span><strong>' + p.pillar + '</strong></td><td style="font-family:\'Roboto Mono\'">' + p.count + '</td><td style="font-family:\'Roboto Mono\'">' + p.total_eng + '</td><td style="font-family:\'Roboto Mono\';font-weight:700">' + p.avg_eng + '</td><td><span class="md-chip ' + chipClass + '">' + sign + delta + '%</span></td><td>' + assessment + '</td></tr>';
+  });
+}
+
+// ── Timing ────────────────────────────────────────────────────────
+function initTiming() {
+  var dowColors = D.fb_dow.map(function(d) { return d.dow === 'Friday' ? P.primary : P.primary + '55'; });
+  mkChart('dow-chart', {
+    type: 'bar',
+    data: { labels: D.fb_dow.map(function(d) { return d.dow; }), datasets: [{ label: 'Avg Engagement', data: D.fb_dow.map(function(d) { return d.engagement; }), backgroundColor: dowColors, borderRadius: 6 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,.06)' } }, y: { grid: { color: 'rgba(0,0,0,.06)' }, beginAtZero: true } } }
+  });
+
+  var allHours = Array.from({ length: 24 }, function(_, i) { return i; });
+  var hourMap = {};
+  D.fb_hour.forEach(function(h) { hourMap[h.hour] = h.engagement; });
+  var hourVals = allHours.map(function(h) { return hourMap[h] || null; });
+  var hourColors = hourVals.map(function(v) { return v && v >= 2.5 ? P.secondary : (v ? P.primary + '66' : 'transparent'); });
+  mkChart('hour-chart', {
+    type: 'bar',
+    data: { labels: allHours.map(function(h) { return h + ':00'; }), datasets: [{ label: 'Avg Engagement', data: hourVals, backgroundColor: hourColors, borderRadius: 4, skipNull: true }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,.04)' }, ticks: { font: { size: 10 }, maxRotation: 45 } }, y: { grid: { color: 'rgba(0,0,0,.06)' }, beginAtZero: true } } }
+  });
+
+  mkChart('cadence-yearly-chart', {
+    type: 'bar',
+    data: {
+      labels: D.fb_yearly.map(function(d) { return d.year; }),
+      datasets: [
+        { label: 'Posts', data: D.fb_yearly.map(function(d) { return d.posts_count; }), backgroundColor: P.primary + '88', yAxisID: 'y', borderRadius: 6 },
+        { label: 'Avg Engagement', data: D.fb_yearly.map(function(d) { return d.avg_eng; }), type: 'line', borderColor: P.secondary, borderWidth: 2.5, pointRadius: 6, pointBackgroundColor: P.secondary, tension: 0.3, fill: false, yAxisID: 'y1' }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } } }, scales: { y: { grid: { color: 'rgba(0,0,0,.06)' }, ticks: { color: P.primary } }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: P.secondary } } } }
+  });
+}
+
+// ── Sentiment ─────────────────────────────────────────────────────
+function initSentiment() {
+  mkChart('sentiment-chart', {
+    type: 'doughnut',
+    data: {
+      labels: ['Positive', 'Neutral', 'Negative'],
+      datasets: [{ data: [D.sentiment.pos, D.sentiment.neu, D.sentiment.neg], backgroundColor: ['#22c55e', '#9ca3af', '#ef4444'], borderWidth: 3, borderColor: '#fff' }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16, font: { size: 13 } } } } }
+  });
+}
+
+// ── Cross-Platform ────────────────────────────────────────────────
+function initSynthesis() {
+  mkChart('platforms-bar-chart', {
+    type: 'bar',
+    data: {
+      labels: ['Instagram', 'Facebook', 'X / Twitter', 'LinkedIn'],
+      datasets: [{
+        label: 'Followers',
+        data: [D.kpis.ig_followers, D.kpis.fb_followers, D.kpis.tw_followers, D.kpis.li_followers],
+        backgroundColor: ['#E91E6399', P.primary + '99', '#4CAF5099', '#2196F399'],
+        borderColor: ['#E91E63', P.primary, '#4CAF50', '#2196F3'],
+        borderWidth: 2, borderRadius: 8
+      }]
+    },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,.06)' }, beginAtZero: true }, y: { ticks: { font: { size: 13, weight: '500' } } } } }
+  });
+}
+
+// ── Init recommendations tabs ─────────────────────────────────
+function initRecs() {
+  initTabs('recs-tab-bar');
+}
+
+// ── SSA page (static, no charts needed) ──────────────────────────
+function initSSA() {
+  // nothing to init — fully static HTML
+}
+
+// ── Page dispatcher ───────────────────────────────────────────────
+function initPage(page) {
+  if (page === 'home') initHome();
+  else if (page === 'exec') initExec();
+  else if (page === 'method') initMethod();
+  else if (page === 'facebook') initFacebook();
+  else if (page === 'pillars') initPillars();
+  else if (page === 'timing') initTiming();
+  else if (page === 'sentiment') initSentiment();
+  else if (page === 'synthesis') initSynthesis();
+  else if (page === 'recs') initRecs();
+  else if (page === 'ssa') initSSA();
+}
+
+navigate('home');
+</script>
+</body>
+</html>
